@@ -72,7 +72,7 @@ Panel >
 
 
     <Grid Background="LightGray">
-        <Grid Height="70" VerticalAlignment="Top" Background="#FF2800A6">
+        <Grid Height="70" VerticalAlignment="Top" Background="LightSeaGreen">
             <TextBlock Text="Design in WPF" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Text="Viktor" VerticalAlignment="Center" FontSize="18"/>
@@ -90,14 +90,13 @@ Panel >
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid Margin="250 55 0 0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180*"/>
-                <ColumnDefinition Width="643*"/>
-            </Grid.ColumnDefinitions>
-            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="231.6,269,411.6,269.6"/>
+        <Grid Margin="150 100 50 50">
+            <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="Black">
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                <Grid x:Name="GridCursor" Margin="0 150 0 0" Background="LightSeaGreen" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top"/>
+            </materialDesign:TransitioningContent>
             <StackPanel>
                 <Grid Height="150" Background="Black" >
                     <Button x:Name="ButtonCloseMenu"  Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
@@ -108,7 +107,7 @@ Panel >
                     </Button>
                 </Grid>
 
-                <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" SelectionChanged="ListView_SelectionChanged"  SelectedIndex="0">
+                <ListView x:Name="ListViewMenu"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" SelectionChanged="ListView_SelectionChanged"  SelectedIndex="0">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Users" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>

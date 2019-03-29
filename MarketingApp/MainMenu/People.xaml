@@ -16,19 +16,35 @@
 
 
         <DataTemplate x:Key="myDataTamplate">
-            <StackPanel Margin="5" HorizontalAlignment="Center" Orientation="Horizontal" Background="Gray">
-                <TextBlock FontSize="16" Text="{Binding Path=Id}" HorizontalAlignment="Center">
-                                    <Separator Background="Green" Height="10"/>
-                </TextBlock>
-                <Separator Background="Green"/>
-                <TextBlock FontSize="16" Text="{Binding Path=MerchantId}" HorizontalAlignment="Center" />
-                <Separator Background="Green"/>
-                <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
-                <Separator Background="Green"/>
-                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
-                <Separator Background="Green"/>
-                <TextBlock FontSize="16" Text="{Binding Path=CreatedAt}" HorizontalAlignment="Center" />
-            </StackPanel>
+            <Grid Height="200" Width="250" Background="#FFF3F3F3">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                </Grid.Effect>
+                <StackPanel Height="200" Width="200" Background="White">
+
+                    <Grid>
+                        <TextBlock Text="Id: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock FontSize="16" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                    <Grid>
+                        <TextBlock Text="MerchantId" VerticalAlignment="Center"  FontSize="16"/>
+                        <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding Path=MerchantId}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                    <Grid>
+                        <TextBlock Text="Name:" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black"  Margin="0 0 10 0"/>
+                    </Grid>
+
+                    <Grid>
+                        <TextBlock Text="Price" VerticalAlignment="Center" FontSize="16"/>
+                        <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                    <Grid>
+                        <TextBlock Text="Dob" VerticalAlignment="Center"  FontSize="16"/>
+                        <TextBlock FontSize="13" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
         </DataTemplate>
 
         <!--<DataTemplate x:Key="dataTableTemplate">

@@ -86,8 +86,8 @@ namespace MarketingApp
 
         private void MoveCursorMenu(int index)
         {
-            //TrainsitionigContentSlide.OnApplyTemplate();
-            //GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
+            TrainsitionigContentSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, (150 + (60 * index)), 0, 0);
         }
     }
 }
