@@ -14,100 +14,55 @@
             ObjectType="{x:Type repo:ProductRepository}" MethodName="GetProducts">
         </ObjectDataProvider>
 
-
+            
         <DataTemplate x:Key="myDataTamplate">
-            <Grid Height="200" Width="250" Background="#FFF3F3F3">
+            <Grid Height="200" Width="150" Background="Transparent">
                 <Grid.Effect>
                     <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
                 </Grid.Effect>
-                <StackPanel Height="200" Width="200" Background="White">
+                <StackPanel Height="180" Width="130" Background="White">
+                    <Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Width="100" Height="100"/>
+                    <Grid>
+                       <TextBlock Text="Id: " FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" Margin="10 0 0 0"/>
+                        <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                    <Grid>
+                        <TextBlock Text="MerchantId:" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
+                        <TextBlock FontSize="10" VerticalAlignment="Center" Text="{Binding Path=MerchantId}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
+                    <Grid>
+                        <TextBlock Text="Name:" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
+                        <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
+                    </Grid>
 
                     <Grid>
-                        <TextBlock Text="Id: " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock FontSize="16" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
+                        <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
+                        <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
                     </Grid>
                     <Grid>
-                        <TextBlock Text="MerchantId" VerticalAlignment="Center"  FontSize="16"/>
-                        <TextBlock FontSize="16" VerticalAlignment="Center" Text="{Binding Path=MerchantId}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                    <Grid>
-                        <TextBlock Text="Name:" VerticalAlignment="Center" FontSize="16"/>
-                        <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black"  Margin="0 0 10 0"/>
-                    </Grid>
-
-                    <Grid>
-                        <TextBlock Text="Price" VerticalAlignment="Center" FontSize="16"/>
-                        <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                    <Grid>
-                        <TextBlock Text="Dob" VerticalAlignment="Center"  FontSize="16"/>
-                        <TextBlock FontSize="13" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
+                        <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
+                        <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
                     </Grid>
                 </StackPanel>
             </Grid>
         </DataTemplate>
 
-        <!--<DataTemplate x:Key="dataTableTemplate">
-            <Table Margin="5" HorizontalAlignment="Center" Orientation="Horizontal" Background="Gray">
-                <Table
-                <TextBlock FontSize="16" Text="{Binding Path=Id}" HorizontalAlignment="Center" />
-                <TextBlock FontSize="16" Text="{Binding Path=MerchantId}" HorizontalAlignment="Center" />
-                <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
-                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
-                <TextBlock FontSize="16" Text="{Binding Path=CreatedAt}" HorizontalAlignment="Center" />
-            </Table>
-        </DataTemplate>-->
+
         
     </UserControl.Resources>
 
     
     <Grid>
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <!-- <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="250"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Height="300" Background="#FFF3F3F3" Margin="10">
-                    <Grid.Effect>
-                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                    </Grid.Effect>
-
-                    <StackPanel Width="200">
-                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="{Binding Path=Id}" Foreground="#FFC00000"/>
-                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Calabresa" Foreground="#FFC00000"/>
-
-                        <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="Calabresa" Foreground="#FFC00000"/>
-                        <TextBlock FontSize="8" Margin="5" TextWrapping="Wrap" FontFamily="Champagne &amp; Limousines">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae est vel turpis hendrerit vulputate. In eleifend, nunc eu egestas.
-                        </TextBlock>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock Text="R$ 25" VerticalAlignment="Center" Margin="10" FontSize="20" FontFamily="Champagne &amp; Limousines"/>
-                            <Button Width="100" Content="Leia Mais" FontFamily="Champagne &amp; Limousines" Margin="10"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid> 
-               
-                
-            </Grid> -->
-            <!--<StackPanel Height="400" Width="300" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <ListBox x:Name="productList" 
-                 ItemsSource="{Binding Source={StaticResource productRepository}}"   ItemTemplate="{StaticResource myDataTamplate}" />
-                <ListBoxItem >
-                        <StackPanel Width="100" Height="100" Background="Red">
-                            <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="asdasdasd" Foreground="#FFC00000"/>
-
-                            <TextBlock Text="{Binding Path=Id}" FontSize="30" Foreground="Green"/>
-                        </StackPanel>
-                    </ListBoxItem>
-            </StackPanel>-->
-
-            <ItemsControl ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource myDataTamplate}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                    <WrapPanel/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource myDataTamplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
         </materialDesign:TransitioningContent>
     </Grid>
     
