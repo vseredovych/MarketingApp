@@ -19,6 +19,10 @@ namespace MarketingApp.Repository
             { 
             new EProduct {Id=1, Name="name1", CreatedAt=Convert.ToDateTime("2019-10-10") },
             new EProduct {Id=1, Name="name2", CreatedAt=Convert.ToDateTime("2019-11-10") },
+            new EProduct {Id=1, Name="name1", CreatedAt=Convert.ToDateTime("2019-10-10") },
+            new EProduct {Id=1, Name="name2", CreatedAt=Convert.ToDateTime("2019-11-10") },
+            new EProduct {Id=1, Name="name1", CreatedAt=Convert.ToDateTime("2019-10-10") },
+            new EProduct {Id=1, Name="name2", CreatedAt=Convert.ToDateTime("2019-11-10") },
             new EProduct {Id=1 }
             };
         }

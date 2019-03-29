@@ -12,22 +12,36 @@
     <UserControl.Resources>
         <ObjectDataProvider x:Key="productRepository"
             ObjectType="{x:Type repo:ProductRepository}" MethodName="GetProducts">
-            
-            
         </ObjectDataProvider>
 
 
         <DataTemplate x:Key="myDataTamplate">
-            <StackPanel Margin="5" HorizontalAlignment="Center" Orientation="Horizontal">
+            <StackPanel Margin="5" HorizontalAlignment="Center" Orientation="Horizontal" Background="Gray">
+                <TextBlock FontSize="16" Text="{Binding Path=Id}" HorizontalAlignment="Center">
+                                    <Separator Background="Green" Height="10"/>
+                </TextBlock>
+                <Separator Background="Green"/>
+                <TextBlock FontSize="16" Text="{Binding Path=MerchantId}" HorizontalAlignment="Center" />
+                <Separator Background="Green"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
+                <Separator Background="Green"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                <Separator Background="Green"/>
+                <TextBlock FontSize="16" Text="{Binding Path=CreatedAt}" HorizontalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+
+        <!--<DataTemplate x:Key="dataTableTemplate">
+            <Table Margin="5" HorizontalAlignment="Center" Orientation="Horizontal" Background="Gray">
+                <Table
                 <TextBlock FontSize="16" Text="{Binding Path=Id}" HorizontalAlignment="Center" />
                 <TextBlock FontSize="16" Text="{Binding Path=MerchantId}" HorizontalAlignment="Center" />
                 <TextBlock FontSize="16" Text="{Binding Path=Name}" HorizontalAlignment="Center" />
                 <TextBlock FontSize="16" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
                 <TextBlock FontSize="16" Text="{Binding Path=CreatedAt}" HorizontalAlignment="Center" />
-
-            </StackPanel>
-        </DataTemplate>
-
+            </Table>
+        </DataTemplate>-->
+        
     </UserControl.Resources>
 
     
@@ -59,17 +73,25 @@
                
                 
             </Grid> -->
-            <StackPanel Height="200" Width="300" Background="Transparent">
-                <ListBox x:Name="phonesList" 
-                 ItemsSource="{Binding Source={StaticResource productRepository}}"  ItemTemplate="{StaticResource myDataTamplate}"/>
-                <!--<ListBoxItem >
+            <!--<StackPanel Height="400" Width="300" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <ListBox x:Name="productList" 
+                 ItemsSource="{Binding Source={StaticResource productRepository}}"   ItemTemplate="{StaticResource myDataTamplate}" />
+                <ListBoxItem >
                         <StackPanel Width="100" Height="100" Background="Red">
                             <TextBlock Margin="10" FontFamily="Showcard Gothic" FontSize="12" Text="asdasdasd" Foreground="#FFC00000"/>
 
                             <TextBlock Text="{Binding Path=Id}" FontSize="30" Foreground="Green"/>
                         </StackPanel>
-                    </ListBoxItem>-->
-            </StackPanel>
+                    </ListBoxItem>
+            </StackPanel>-->
+
+            <ItemsControl ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource myDataTamplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                    <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </materialDesign:TransitioningContent>
     </Grid>
     
