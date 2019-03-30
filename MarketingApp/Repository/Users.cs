@@ -13,11 +13,11 @@ namespace MarketingApp.Repository
         {
             users = new ObservableCollection<EUser>
             { 
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsActive=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsActive=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsActive=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsActive=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsActive=true},
+            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
+            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
+            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
+            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
+            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
             };
         }
         public ObservableCollection<EUser> GetUsers()

@@ -8,7 +8,7 @@ namespace DAL.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Dob { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsRoot { get; set; }
 
     }
 }

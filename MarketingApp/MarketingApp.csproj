@@ -75,9 +75,16 @@
     </ApplicationDefinition>
     <Compile Include="Entities\EOrder.cs" />
     <Compile Include="Entities\EUser.cs" />
+    <Compile Include="MainMenu\Staff.xaml.cs">
+      <DependentUpon>Staff.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\Users.cs" />
     <Compile Include="Repository\Products.cs" />
     <Page Include="MainMenu\MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu\Staff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -97,7 +104,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainMenu\People.xaml">
+    <Page Include="MainMenu\Products.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,8 +114,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainMenu\People.xaml.cs">
-      <DependentUpon>People.xaml</DependentUpon>
+    <Compile Include="MainMenu\Products.xaml.cs">
+      <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

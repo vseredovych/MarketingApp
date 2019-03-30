@@ -18,9 +18,9 @@ namespace MarketingApp
     /// <summary>
     /// Логика взаимодействия для People.xaml
     /// </summary>
-    public partial class People : UserControl
+    public partial class Staff : UserControl
     {
-        public People()
+        public Staff()
         {
             InitializeComponent();
         }
