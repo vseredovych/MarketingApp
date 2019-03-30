@@ -2,7 +2,7 @@
 
 namespace DAL.Entities
 {
-    class EUser
+    public class EUser
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

@@ -7,53 +7,50 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:repo="clr-namespace:MarketingApp.Repository"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
 
     <UserControl.Resources>
         <ObjectDataProvider x:Key="productRepository"
             ObjectType="{x:Type repo:ProductRepository}" MethodName="GetProducts">
         </ObjectDataProvider>
 
-            
         <DataTemplate x:Key="myDataTamplate">
             <Grid Height="200" Width="150" Background="Transparent">
-                <Grid.Effect>
-                    <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
-                </Grid.Effect>
-                <StackPanel Height="180" Width="130" Background="White">
-                    <Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Width="100" Height="100"/>
-                    <Grid>
-                       <TextBlock Text="Id: " FontSize="10" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" Margin="10 0 0 0"/>
-                        <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                    <Grid>
-                        <TextBlock Text="MerchantId:" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
-                        <TextBlock FontSize="10" VerticalAlignment="Center" Text="{Binding Path=MerchantId}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                    <Grid>
-                        <TextBlock Text="Name:" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
-                        <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
 
-                    <Grid>
-                        <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
-                        <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                    <Grid>
-                        <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="10 0 0 0"/>
-                        <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 10 0"/>
-                    </Grid>
-                </StackPanel>
+                <Button Height="180" Width="130" Background="#EBEDED" BorderThickness="1" BorderBrush="AntiqueWhite">
+
+                    <StackPanel>
+                        <Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid>
+                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="MerchantId:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=MerchantId}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                        </Grid>
+                    </StackPanel>
+                </Button>
             </Grid>
         </DataTemplate>
-
-
-        
     </UserControl.Resources>
 
-    
-    <Grid>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource myDataTamplate}">
                     <ItemsControl.ItemsPanel>
@@ -64,6 +61,4 @@
                 </ItemsControl>
             </ScrollViewer>
         </materialDesign:TransitioningContent>
-    </Grid>
-    
 </UserControl>

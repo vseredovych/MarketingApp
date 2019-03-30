@@ -72,6 +72,10 @@ namespace MarketingApp
             switch (index)
             {
                 case 0:
+                    //GridPrincipal.Children.Clear();
+                    //GridPrincipal.Children.Add(new People());
+                    break;
+                case 1:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new People());
                     break;
