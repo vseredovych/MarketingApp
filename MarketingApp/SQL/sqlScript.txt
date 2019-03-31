@@ -1,0 +1,70 @@
+﻿CREATE TABLE `Users` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT=4294967296, 
+  `FirstName` varchar(30) NOT NULL,
+  `LastName` varchar(30) NOT NULL,
+  `Dob` date DEFAULT NULL,
+  `IsRoot` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `uk_Users_Id` (`Id`)
+);
+
+insert into Users (FirstName, LastName, Dob, IsRoot) values ("fistname1", "lastname1", "2019-10-10", 0);
+insert into Users (FirstName, LastName, Dob, IsRoot) values ("fistname2", "lastname2", "2019-11-11", 0);
+insert into Users (FirstName, LastName, Dob, IsRoot) values ("fistname3", "lastname3", "2019-12-12", 0);
+
+
+CREATE TABLE `Products` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(30) NOT NULL,
+  `Price` double NOT NULL,
+  `Status` varchar(30) NOT NULL,
+  `MerchantId` int(11) DEFAULT NULL,
+  `CreatedAt` datetime NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `uk_Products_Id` (`Id`)
+);
+
+insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values ("Phone1", 3999, "Present", 1, "2019-10-10");
+insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values ("Phone2", 3999, "Present", 2, "2019-10-11");
+insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values ("Phone3", 3999, "Present", 3, "2019-10-12");
+
+
+
+
+
+CREATE TABLE `Orders` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `UserId` varchar(30) NOT NULL,
+  `Status` varchar(30) NOT NULL,
+  `CreatedAt` varchar(30) NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `uk_Products_Id` (`Id`)
+);
+
+insert into Orders (UserId, Status, CreatedAt) Values (1, "InProgress", "2019-10-10");
+insert into Orders (UserId, Status, CreatedAt) Values (2, "InProgress", "2019-11-11");
+insert into Orders (UserId, Status, CreatedAt) Values (3, "InProgress", "2019-12-12");
+
+CREATE TABLE `Merchants` (
+	`Id` INT NOT NULL AUTO_INCREMENT,
+	`merchant_name` varchar(30) NOT NULL,
+	`admin_id` varchar(30) NOT NULL,
+	`country_code` varchar(30) NOT NULL,
+	`created_at` varchar(30) NOT NULL,
+	PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `Ordered_Items` (
+	`order_id` INT NOT NULL AUTO_INCREMENT,
+	`product_id` INT NOT NULL,
+	`quantity` INT NOT NULL,
+	PRIMARY KEY (`order_id`)
+);
+
+
+CREATE TABLE `Countries` (
+	`code` INT NOT NULL AUTO_INCREMENT,
+	`name` varchar(30) NOT NULL,
+	`continent_name` varchar(30) NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`code`)
+);

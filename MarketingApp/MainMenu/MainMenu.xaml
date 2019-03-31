@@ -71,19 +71,19 @@
                 <ListView x:Name="ListViewMenu"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" SelectionChanged="ListView_SelectionChanged"  SelectedIndex="0">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="FaceProfile" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Profile"  VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Users" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Users"  VerticalAlignment="Center" Margin="20 10"/>
+                            <TextBlock Text="Users" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="BoxVariant" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Tickets" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Products" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>

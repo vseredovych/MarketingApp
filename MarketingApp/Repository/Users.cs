@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using DAL.Entities;
-
+using DAL.Operations;
 
 namespace MarketingApp.Repository
 {
     public class UserRepository
     {
         private ObservableCollection<EUser> users;
+        OUser operUser = new OUser();
 
         public UserRepository()
         {
-            users = new ObservableCollection<EUser>
-            { 
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
-            new EUser {Id=1, Dob=Convert.ToDateTime("2019-10-10"), FirstName="FirstName", LastName="Lastname", IsRoot=true},
-            };
+            users = new ObservableCollection<EUser>();
+        }
+        public void FillRepositoryWithData()
+        {
+            users = new ObservableCollection<EUser>(operUser.Select());
+        }
+        public void AddUserToRepository(EUser user)
+        {
+            users.Add(user);
         }
         public ObservableCollection<EUser> GetUsers()
         {

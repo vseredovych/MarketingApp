@@ -14,7 +14,7 @@
 
     <UserControl.Resources>
         <ObjectDataProvider x:Key="userRepository"
-            ObjectType="{x:Type repo:UserRepository}" MethodName="GetUsers">
+            ObjectType="{x:Type local:MainMenu}" MethodName="GetUsers">
         </ObjectDataProvider>
 
         <DataTemplate x:Key="staffTemplate">

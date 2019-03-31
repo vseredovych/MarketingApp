@@ -14,14 +14,13 @@
 
     <UserControl.Resources>
         <ObjectDataProvider x:Key="productRepository"
-            ObjectType="{x:Type repo:ProductRepository}" MethodName="GetProducts">
+            ObjectType="{x:Type local:MainMenu}" MethodName="GetProducts">
         </ObjectDataProvider>
 
         <DataTemplate x:Key="productsTemplate">
             <Grid Height="200" Width="150" Background="Transparent">
 
                 <Button Height="180" Width="130" Background="#EBEDED" BorderThickness="1" BorderBrush="AntiqueWhite">
-
                     <StackPanel>
                         <Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Grid>

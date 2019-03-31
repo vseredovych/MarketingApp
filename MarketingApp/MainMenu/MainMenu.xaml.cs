@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using MarketingApp.Repository;
+using DAL.Entities;
+using System.Collections.ObjectModel;
 
 namespace MarketingApp
 {
@@ -19,15 +15,32 @@ namespace MarketingApp
     /// </summary>
     public partial class MainMenu : Window
     {
+        //public UserRepository userRepository = new UserRepository();
+        public ProductRepository productRepository = new ProductRepository();
+        public UserRepository userRepository = new UserRepository();
+
+
+        public ObservableCollection<EProduct> GetProducts()
+        {
+            return productRepository.GetProducts();
+        }
+
+        public ObservableCollection<EUser> GetUsers()
+        {
+            return userRepository.GetUsers();
+        }
+
+
+
         public MainMenu()
         {
+            productRepository.FillRepositoryWithData();
+            userRepository.FillRepositoryWithData();
+
             InitializeComponent();
+           
         }
 
-        private void Products_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
 
         public void DragWindow(object sender, MouseButtonEventArgs args)
@@ -69,16 +82,26 @@ namespace MarketingApp
             int index = ListViewMenu.SelectedIndex;
             MoveCursorMenu(index);
 
+            //userRepository.FillRepositoryWithData();
+
             switch (index)
             {
                 case 0:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Staff());
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Staff());
+                    break;
+                case 2:
+                    GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Products());
                     break;
+                //case 2:
+                //    GridPrincipal.Children.Clear();
+                //    productRepository.FillRepositoryWithData();
+
+                //    GridPrincipal.Children.Add(new Products());
+                //    break;
                 //case 1:
                 //    GridPrincipal.Children.Clear();
                 //    GridPrincipal.Children.Add(new UserControlEscolha());

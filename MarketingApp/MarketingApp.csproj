@@ -51,6 +51,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.5.1-ci1344\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -75,11 +76,17 @@
     </ApplicationDefinition>
     <Compile Include="Entities\EOrder.cs" />
     <Compile Include="Entities\EUser.cs" />
+    <Compile Include="Operations\OOrder.cs" />
+    <Compile Include="Operations\OProduct.cs" />
+    <Compile Include="Operations\OUser.cs" />
+    <Compile Include="Repository\RepositoryHelper.cs" />
+    <Compile Include="SQL\Authentication.cs" />
     <Compile Include="MainMenu\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\Users.cs" />
     <Compile Include="Repository\Products.cs" />
+    <Compile Include="SQL\SqlHelper.cs" />
     <Page Include="MainMenu\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,7 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="LoginMenu\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -100,7 +107,7 @@
     <Compile Include="MainMenu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="LoginMenu\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -141,7 +148,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="App.config" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\close.png" />
@@ -155,6 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SQL\sqlScript.txt">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
