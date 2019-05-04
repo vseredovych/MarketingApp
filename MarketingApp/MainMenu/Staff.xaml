@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MarketingApp"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:repo="clr-namespace:MarketingApp.Repository"
              mc:Ignorable="d" 
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -13,9 +12,9 @@
              d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
 
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="userRepository"
+        <!--<ObjectDataProvider x:Key="userRepository"
             ObjectType="{x:Type local:MainMenu}" MethodName="GetUsers">
-        </ObjectDataProvider>
+        </ObjectDataProvider>-->
 
         <DataTemplate x:Key="staffTemplate">
             <Grid Height="120" Background="Transparent">
@@ -76,13 +75,13 @@
             </Grid>
             <Grid Margin="0 30 0 0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl Margin="-15 0 0 0" ItemsSource="{Binding Source={StaticResource userRepository}}" ItemTemplate="{StaticResource staffTemplate}">
+                    <!--<ItemsControl Margin="-15 0 0 0" ItemsSource="{Binding Source={StaticResource userRepository}}" ItemTemplate="{StaticResource staffTemplate}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
-                    </ItemsControl>
+                    </ItemsControl>-->
                 </ScrollViewer>
             </Grid>
         </Grid>

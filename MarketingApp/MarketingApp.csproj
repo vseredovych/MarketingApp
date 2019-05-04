@@ -38,6 +38,9 @@
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\DAL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.6.0.362, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -74,19 +77,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entities\EOrder.cs" />
-    <Compile Include="Entities\EUser.cs" />
-    <Compile Include="Operations\OOrder.cs" />
-    <Compile Include="Operations\OProduct.cs" />
-    <Compile Include="Operations\OUser.cs" />
-    <Compile Include="Repository\RepositoryHelper.cs" />
-    <Compile Include="SQL\Authentication.cs" />
+    <Compile Include="Database\migration\MigrationHelper.cs" />
+    <Compile Include="Database\Authentication.cs" />
     <Compile Include="MainMenu\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Users.cs" />
-    <Compile Include="Repository\Products.cs" />
-    <Compile Include="SQL\SqlHelper.cs" />
     <Page Include="MainMenu\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,7 +98,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\EProduct.cs" />
     <Compile Include="MainMenu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -163,10 +157,9 @@
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="SQL\sqlScript.txt">
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
+    <Content Include="Database\migration\scripts\db_v1.0.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

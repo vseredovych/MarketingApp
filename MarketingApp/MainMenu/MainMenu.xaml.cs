@@ -4,8 +4,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using MarketingApp.Repository;
-using DAL.Entities;
 using System.Collections.ObjectModel;
 
 namespace MarketingApp
@@ -16,27 +14,27 @@ namespace MarketingApp
     public partial class MainMenu : Window
     {
         //public UserRepository userRepository = new UserRepository();
-        public ProductRepository productRepository = new ProductRepository();
-        public UserRepository userRepository = new UserRepository();
+        //static public ProductRepository productRepository = new ProductRepository();
+        //static public UserRepository userRepository = new UserRepository();
 
 
-        public ObservableCollection<EProduct> GetProducts()
-        {
-            return productRepository.GetProducts();
-        }
+        //public ObservableCollection<Product> GetProducts()
+        //{
+        //    return productRepository.GetProducts();
+        //}
 
-        public ObservableCollection<EUser> GetUsers()
-        {
-            return userRepository.GetUsers();
-        }
+        //public ObservableCollection<User> GetUsers()
+        //{
+        //    return userRepository.GetUsers();
+        //}
 
 
 
         public MainMenu()
         {
-            productRepository.FillRepositoryWithData();
-            userRepository.FillRepositoryWithData();
-
+            //productRepository.FillRepositoryWithData();
+            //userRepository.FillRepositoryWithData();
+            //ItemS = productRepository();
             InitializeComponent();
            
         }

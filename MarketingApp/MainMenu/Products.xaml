@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MarketingApp"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:repo="clr-namespace:MarketingApp.Repository"
              mc:Ignorable="d" 
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -13,9 +12,9 @@
              d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
 
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="productRepository"
-            ObjectType="{x:Type local:MainMenu}" MethodName="GetProducts">
-        </ObjectDataProvider>
+        <!--<ObjectDataProvider x:Key="productRepository"
+            ObjectType="{x:Type repo:ProductRepository}" MethodName="GetProducts">
+        </ObjectDataProvider>-->
 
         <DataTemplate x:Key="productsTemplate">
             <Grid Height="200" Width="150" Background="Transparent">
@@ -51,13 +50,13 @@
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource productsTemplate}">
+            <!--<ItemsControl x:Name="ItemSource"  ItemsSource="{Binding Source={StaticResource productRepository}}" ItemTemplate="{StaticResource productsTemplate}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                </ItemsControl>
+                </ItemsControl>-->
             </ScrollViewer>
         </materialDesign:TransitioningContent>
 </UserControl>
