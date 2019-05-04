@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
-using DAL.Helper;
+using DAL.Core;
 
-namespace DAL.Authentication
+namespace MarketingApp
 
 {
-    class Authentication
+    public class Authentication
     {
 
         public static bool userAuthentication(string user, string password)
         {
-            SqlHelper dbMabager = new SqlHelper();
+            DbHelper dbMabager = new DbHelper();
             string querry = "SELECT * FROM Users";
 
-            DbDataReader reader = dbMabager.GetDataReader(querry);
+            DbDataReader reader = (DbDataReader)dbMabager.GetDataReader(querry);
             return true;
             
             while (reader.Read())
