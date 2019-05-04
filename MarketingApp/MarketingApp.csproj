@@ -50,6 +50,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1344, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.1-ci1344\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Models">
+      <HintPath>..\Models\bin\Debug\Models.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -74,19 +77,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Entities\EOrder.cs" />
-    <Compile Include="Entities\EUser.cs" />
-    <Compile Include="Operations\OOrder.cs" />
-    <Compile Include="Operations\OProduct.cs" />
-    <Compile Include="Operations\OUser.cs" />
-    <Compile Include="Repository\RepositoryHelper.cs" />
-    <Compile Include="SQL\Authentication.cs" />
+    <Compile Include="Database\migration\MigrationHelper.cs" />
+    <Compile Include="Database\Authentication.cs" />
     <Compile Include="MainMenu\Staff.xaml.cs">
       <DependentUpon>Staff.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Users.cs" />
-    <Compile Include="Repository\Products.cs" />
-    <Compile Include="SQL\SqlHelper.cs" />
     <Page Include="MainMenu\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,7 +98,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\EProduct.cs" />
     <Compile Include="MainMenu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -163,10 +157,9 @@
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Resource Include="SQL\sqlScript.txt">
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
+    <Content Include="Database\migration\scripts\db_v1.0.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
