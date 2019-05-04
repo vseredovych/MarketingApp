@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{439DF8C5-2054-4353-B9D0-FAA51A8B2763}</ProjectGuid>
+    <ProjectGuid>{5A5C0212-0E11-4A9E-85E3-827F82D37CF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Models</RootNamespace>
-    <AssemblyName>Models</AssemblyName>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,21 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\UsersCollections.cs" />
-    <Compile Include="Collections\ProductsCollections.cs" />
-    <Compile Include="Collections\OrdersCollections.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="Interfaces\IEntityCollection.cs" />
-    <Compile Include="Interfaces\IOperations.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Migration\MigrationHelper.cs" />
-    <Compile Include="Operations\ProductsOperations.cs" />
-    <Compile Include="Operations\OrdersOperations.cs" />
-    <Compile Include="Operations\UsersOperations.cs" />
+    <Compile Include="Collections\OrdersCollections.cs" />
+    <Compile Include="Collections\ProductsCollections.cs" />
+    <Compile Include="Collections\UsersCollections.cs" />
     <Compile Include="Core\DbHelper.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IEntityCollection.cs" />
+    <Compile Include="Interfaces\IOperations.cs" />
+    <Compile Include="Migration\MigrationHelper.cs" />
+    <Compile Include="Operations\OrdersOperations.cs" />
+    <Compile Include="Operations\ProductsOperations.cs" />
+    <Compile Include="Operations\UsersOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
