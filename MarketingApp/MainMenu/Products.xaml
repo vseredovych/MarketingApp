@@ -10,7 +10,7 @@
              TextElement.FontSize="14"
              xmlns:repo="clr-namespace:MarketingApp"
              FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-             d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
+             d:DesignHeight="450" d:DesignWidth="800"  Foreground="DimGray" Background="Transparent">
 
         <UserControl.Resources>
         <!--<ObjectDataProvider x:Key="productRepository"
@@ -20,28 +20,28 @@
         <DataTemplate x:Key="productsTemplate">
             <Grid Height="200" Width="150" Background="Transparent">
 
-                <Button Height="180" Width="130" Background="#EBEDED" BorderThickness="1" BorderBrush="AntiqueWhite">
+                <Button Height="180" Width="130" Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite">
                     <StackPanel>
                         <!--<Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
                         <Grid>
-                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="MerchantId:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=MerchantId}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                            <TextBlock Text="MerchantId:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=MerchantId}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="Black" Margin="0 0 5 0"/>
+                            <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="Black" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="Black" Margin="0 0 5 0"/>
+                            <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                     </StackPanel>
                 </Button>

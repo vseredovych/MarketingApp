@@ -25,5 +25,9 @@ namespace MarketingApp
             InitializeComponent();
         }
 
+        private void Delete_User_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

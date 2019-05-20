@@ -35,11 +35,11 @@
 
 
                         <!--<Image Grid.Column="0"  Width="100" Height="100" HorizontalAlignment="Left" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />-->
-                        <Button Grid.Column="1" Width="100" HorizontalAlignment="Left" Grid.Row="1" Background="LightSeaGreen" FontSize="10" Content="{Binding Path=Id}" />
-                        <Button Grid.Column="2" Width="100" HorizontalAlignment="Left" Grid.Row="1" Background="LightSeaGreen" FontSize="10" Content="{Binding Path=FirstName}"  />
-                        <Button Grid.Column="3" Width="100" HorizontalAlignment="Left" Grid.Row="1" Background="LightSeaGreen" FontSize="10" Content="{Binding Path=LastName}"  />
-                        <Button Grid.Column="4" Width="200" HorizontalAlignment="Left" Grid.Row="1" Background="LightSeaGreen" FontSize="10" Content="{Binding Path=Dob}"  />
-                        <Button Grid.Column="5" Width="100" HorizontalAlignment="Left" Grid.Row="1" Background="LightSeaGreen" FontSize="10" Content="{Binding Path=CurrentSity}"  />
+                        <Button Grid.Column="1" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Id}" />
+                        <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
+                        <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />
+                        <Button Grid.Column="4" Width="200" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Dob}"  />
+                        <Button Grid.Column="5" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=CurrentSity}"  />
 
                     </Grid>
                 </Button>
@@ -61,16 +61,14 @@
                         <ColumnDefinition Width="100"></ColumnDefinition>
                         <ColumnDefinition Width="200"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
-
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" Width="100" FontSize="12" Content="photo" Background="LightSeaGreen" Foreground="White"/>
-                    <Button Grid.Column="1" Width="100" FontSize="12" Content="Id" Background="LightSeaGreen" Foreground="White"/>
-                    <Button Grid.Column="2" Width="100" FontSize="12" Content="firstName" Background="LightSeaGreen" Foreground="White"/>
-                    <Button Grid.Column="3" Width="100" FontSize="12" Content="LastName" Background="LightSeaGreen" Foreground="White"/>
-                    <Button Grid.Column="4" Width="200" FontSize="12" Content="Dob" Background="LightSeaGreen" Foreground="White"/>
-                    <Button Grid.Column="5" Width="100" FontSize="12" Content="CurrentSity" Background="LightSeaGreen" Foreground="White"/>
-
+                    <Button Grid.Column="0" Width="100" FontSize="12" Content="photo" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="1" Width="100" FontSize="12" Content="Id" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="2" Width="100" FontSize="12" Content="firstName" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="3" Width="100" FontSize="12" Content="LastName" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="4" Width="200" FontSize="12" Content="Dob" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="5" Width="100" FontSize="12" Content="CurrentSity" Background="#ECEB6A" Foreground="DimGray"/>
                 </Grid>
             </Grid>
             <Grid Margin="0 30 0 0">
