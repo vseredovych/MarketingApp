@@ -15,7 +15,7 @@ namespace DAL.Operations
         //CRUD
         public void Insert(Order order)
         {
-            string commandText = "Insert into" + databaseTable + "(Id, UserId, Status, CreateAt)" +
+            string commandText = "Insert into " + databaseTable + "(Id, UserId, Status, CreateAt)" +
                                  "values (@Id, @UserId, @Status, @CreateAt);";
             var parameters = GetParametrs(order);
             dbManager.CommandExecuteNonQuery(commandText, parameters);

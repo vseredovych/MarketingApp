@@ -15,7 +15,7 @@ namespace DAL.Operations
         //CRUD
         public void Insert(Product products)
         {
-            string commandText = "Insert into" + databaseTable + "(Id, MerchantId, Name, Price, Status, CreateAt)" +
+            string commandText = "Insert into " + databaseTable + "(Id, MerchantId, Name, Price, Status, CreatedAt)" +
                                  "values (@Id, @MerchantId, @Name, @Price, @Status, @CreatedAt);";
             var parameters = GetParametrs(products);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -27,7 +27,7 @@ namespace DAL.Operations
                 "Name = @Name, " +
                 "Price = @Price, " +
                 "Status = @Status " +
-                "CreateAt = @CreateAt" +
+                "CreatedAt = @CreatedAt" +
                 "Where Id = @Id;";
             var parameters = GetParametrs(products);
             dbManager.CommandExecuteNonQuery(commandText, parameters);

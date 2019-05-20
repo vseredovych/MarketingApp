@@ -8,7 +8,6 @@ namespace DAL.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Dob { get; set; }
-        public bool IsRoot { get; set; }
-
+        public string CurrentSity { get; set; }
     }
 }

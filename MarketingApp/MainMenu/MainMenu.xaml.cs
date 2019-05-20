@@ -5,6 +5,8 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using DAL.Collections;
+using DAL.Entities;
 
 namespace MarketingApp
 {
@@ -13,28 +15,48 @@ namespace MarketingApp
     /// </summary>
     public partial class MainMenu : Window
     {
-        //public UserRepository userRepository = new UserRepository();
-        //static public ProductRepository productRepository = new ProductRepository();
-        //static public UserRepository userRepository = new UserRepository();
+        public ProductsCollections Products;// = new ProductRepository();
+        public UsersCollections Users;// = new UserRepository();
 
-
-        //public ObservableCollection<Product> GetProducts()
-        //{
-        //    return productRepository.GetProducts();
-        //}
-
-        //public ObservableCollection<User> GetUsers()
-        //{
-        //    return userRepository.GetUsers();
-        //}
-
-
+        ProductsMenu productsMenu;
+        StaffMenu staffMenu;
 
         public MainMenu()
         {
             //productRepository.FillRepositoryWithData();
             //userRepository.FillRepositoryWithData();
             //ItemS = productRepository();
+            productsMenu = new ProductsMenu();
+            staffMenu = new StaffMenu();
+            Products = new ProductsCollections();
+            Users = new UsersCollections();
+
+            //for (int i = 6; i < 100; i++)
+            //{
+            //    Products.Add(new Product
+            //    {
+            //        Id = i,
+            //        Name = "Name" + i,
+            //        CreatedAt = Convert.ToDateTime("2019-10-10"),
+            //        MerchantId = i,
+            //        Status = "Present"
+            //    }
+            //);
+            //for (int i = 1; i < 100; i++)
+            //{
+            //    Users.Add(new User
+            //    {
+            //        Id = i,
+            //        Dob = Convert.ToDateTime("2019-10-10"),
+            //        FirstName = "Name" + 1,
+            //        LastName = "LastName" + 1,
+            //        CurrentSity = "Lviv",
+            //    }
+            //    );
+            //}
+            productsMenu.ItemSourceProducts.ItemsSource = Products.GetAll();
+            staffMenu.ItemSourceUsers.ItemsSource = Users.GetAll();
+
             InitializeComponent();
            
         }
@@ -44,6 +66,7 @@ namespace MarketingApp
         public void DragWindow(object sender, MouseButtonEventArgs args)
         {
             DragMove();
+           
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -81,18 +104,17 @@ namespace MarketingApp
             MoveCursorMenu(index);
 
             //userRepository.FillRepositoryWithData();
-
             switch (index)
             {
                 case 0:
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Staff());
+                    GridPrincipal.Children.Add(staffMenu);
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new Products());
+                    GridPrincipal.Children.Add(productsMenu);
                     break;
                 //case 2:
                 //    GridPrincipal.Children.Clear();

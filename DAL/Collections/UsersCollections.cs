@@ -4,7 +4,7 @@ using DAL.Operations;
 using DAL.Entities;
 using DAL.Interfaces;
 
-namespace Models.Collections
+namespace DAL.Collections
 {
     public class UsersCollections : IEntityCollection<User>
     {
