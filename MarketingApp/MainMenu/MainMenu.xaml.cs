@@ -19,7 +19,7 @@ namespace MarketingApp
         public UsersCollections Users;// = new UserRepository();
 
         ProductsMenu productsMenu;
-        StaffMenu staffMenu;
+        UsersMenu usersMenu;
 
         public MainMenu()
         {
@@ -27,7 +27,7 @@ namespace MarketingApp
             //userRepository.FillRepositoryWithData();
             //ItemS = productRepository();
             productsMenu = new ProductsMenu();
-            staffMenu = new StaffMenu();
+            usersMenu = new UsersMenu();
             Products = new ProductsCollections();
             Users = new UsersCollections();
 
@@ -55,7 +55,7 @@ namespace MarketingApp
             //    );
             //}
             productsMenu.ItemSourceProducts.ItemsSource = Products.GetAll();
-            staffMenu.ItemSourceUsers.ItemsSource = Users.GetAll();
+            usersMenu.ItemSourceUsers.ItemsSource = Users.GetAll();
 
             InitializeComponent();
            
@@ -110,7 +110,7 @@ namespace MarketingApp
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(staffMenu);
+                    GridPrincipal.Children.Add(usersMenu);
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();

@@ -20,6 +20,7 @@ namespace MarketingApp
     /// </summary>
     public partial class ProductsMenu : UserControl
     {
+
         public ProductsMenu()
         {
             InitializeComponent();

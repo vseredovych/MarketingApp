@@ -12,7 +12,7 @@
              FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
              d:DesignHeight="450" d:DesignWidth="800"  Foreground="DimGray" Background="Transparent">
 
-        <UserControl.Resources>
+    <UserControl.Resources>
         <!--<ObjectDataProvider x:Key="productRepository"
             ObjectType="{x:Type repo:MainMenu}" MethodName="Products.GetProducts">
         </ObjectDataProvider>-->
@@ -50,7 +50,7 @@
     </UserControl.Resources>
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
             <ItemsControl x:Name="ItemSourceProducts"  ItemTemplate="{StaticResource productsTemplate}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -59,6 +59,5 @@
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
         </ScrollViewer>
-        </materialDesign:TransitioningContent>
+    </materialDesign:TransitioningContent>
 </UserControl>
-<!--ItemsSource="{Binding Source={StaticResource productRepository}}"-->

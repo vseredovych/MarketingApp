@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,12 @@ namespace MarketingApp
     /// <summary>
     /// Логика взаимодействия для People.xaml
     /// </summary>
-    public partial class StaffMenu : UserControl
+    public partial class UsersMenu : UserControl
     {
-        public StaffMenu()
+        public UsersCollections Users;
+        UsersMenu usersMenu;
+
+        public UsersMenu()
         {
             InitializeComponent();
         }
