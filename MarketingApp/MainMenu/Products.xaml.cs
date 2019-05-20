@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,14 @@ namespace MarketingApp
     /// </summary>
     public partial class ProductsMenu : UserControl
     {
+        public ProductsCollections Products;// = new ProductRepository();
 
         public ProductsMenu()
         {
+
             InitializeComponent();
+            Products = new ProductsCollections();
+            ItemSourceProducts.ItemsSource = Products.GetAll();
         }
 
     }

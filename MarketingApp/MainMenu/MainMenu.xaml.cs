@@ -15,8 +15,6 @@ namespace MarketingApp
     /// </summary>
     public partial class MainMenu : Window
     {
-        public ProductsCollections Products;// = new ProductRepository();
-        public UsersCollections Users;// = new UserRepository();
 
         ProductsMenu productsMenu;
         UsersMenu usersMenu;
@@ -28,8 +26,6 @@ namespace MarketingApp
             //ItemS = productRepository();
             productsMenu = new ProductsMenu();
             usersMenu = new UsersMenu();
-            Products = new ProductsCollections();
-            Users = new UsersCollections();
 
             //for (int i = 6; i < 100; i++)
             //{
@@ -54,8 +50,6 @@ namespace MarketingApp
             //    }
             //    );
             //}
-            productsMenu.ItemSourceProducts.ItemsSource = Products.GetAll();
-            usersMenu.ItemSourceUsers.ItemsSource = Users.GetAll();
 
             InitializeComponent();
            

@@ -22,11 +22,14 @@ namespace MarketingApp
     public partial class UsersMenu : UserControl
     {
         public UsersCollections Users;
-        UsersMenu usersMenu;
 
         public UsersMenu()
         {
+
+
             InitializeComponent();
+            Users = new UsersCollections();
+            ItemSourceUsers.ItemsSource = Users.GetAll();
         }
 
         private void Delete_User_Click(object sender, RoutedEventArgs e)
