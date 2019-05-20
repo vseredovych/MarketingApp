@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
 using DAL.Core;
+using MarketingApp.Database.Migration;
 
 namespace MarketingApp
 
@@ -15,11 +16,16 @@ namespace MarketingApp
         public static bool userAuthentication(string user, string password)
         {
             DbHelper dbMabager = new DbHelper();
-            string querry = "SELECT * FROM Users";
+            MigrationHelper migrationHelper = new MigrationHelper();
 
+
+            migrationHelper.UpdateDb();
+
+            string querry = "SELECT * FROM Users";
             DbDataReader reader = (DbDataReader)dbMabager.GetDataReader(querry);
+
             return true;
-            
+
             while (reader.Read())
             {
                 if (user == reader["User"].ToString())

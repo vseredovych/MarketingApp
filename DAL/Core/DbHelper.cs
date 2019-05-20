@@ -12,7 +12,7 @@ namespace DAL.Core
         {
             DbProviderFactory factory = DbProviderFactories.GetFactory(invariant);
             DbConnection connection = factory.CreateConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings["MySql"].ConnectionString;
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["MarketingApp"].ConnectionString;
 
             return connection;
         }
@@ -65,7 +65,30 @@ namespace DAL.Core
             return parameter;
         }
 
+        public DbDataReader GetDataReader(string commandText, List<IDbDataParameter> parameters)
+        {
+            DbDataReader reader = null;
 
+            var connection = this.CreateConnection();
+
+            connection.Open();
+
+            var command = this.CreateDbCommand(connection, commandText);
+
+
+            if (parameters != null)
+            {
+                foreach (var parameter in parameters)
+                {
+                    command.Parameters.Add(parameter);
+                }
+            }
+            reader = command.ExecuteReader();
+            return reader;
+
+
+
+        }
         public void CommandExecuteNonQuery(string commandText, List<DbParameter> parameters)
         {
             using (var connection = this.CreateConnection())
@@ -85,7 +108,18 @@ namespace DAL.Core
                 }
             }
         }
+        public void CommandExecuteNonQuery(string commandText)
+        {
+            using (var connection = this.CreateConnection())
+            {
+                connection.Open();
 
+                using (var command = this.CreateDbCommand(connection, commandText))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public object GetScalarValue(string commandText, List<DbParameter> parameters = null)
         {
             using (var connection = this.CreateConnection())
@@ -106,42 +140,25 @@ namespace DAL.Core
                 }
             }
         }
-
-        //public DbDataReader GetDataReader(string commandText/*, List<DbParameter> parameters*/)
-        //{
-        //    DbDataReader reader = null;
-
-        //    using (var connection = this.CreateConnection())
-        //    {
-        //        connection.Open();
-
-        //        using (var command = this.CreateDbCommand(connection, commandText))
-        //        {
-        //            //if (parameters != null)
-        //            //{
-        //            //    foreach (var parameter in parameters)
-        //            //    {
-        //            //        command.Parameters.Add(parameter);
-        //            //    }
-        //            //}
-        //            reader = command.ExecuteReader();
-        //            return reader;
-
-        //        }
-        //    }
-        //}
         public IDataReader GetDataReader(string commandText)
         {
             IDataReader reader = null;
-            using (var connection = this.CreateConnection())
-            {
-                connection.Open();
+            //try
+            //{
+                using (var connection = this.CreateConnection())
+                {
+                    connection.Open();
 
-                var command = this.CreateDbCommand(connection, commandText);
+                    var command = this.CreateDbCommand(connection, commandText);
 
-                reader = command.ExecuteReader();
-                return reader;
-            }
+                    reader = command.ExecuteReader();
+                    return reader;
+                }
+            //}
+            //catch ()
+            //{
+
+            //}
         }
     }
 }

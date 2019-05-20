@@ -1,4 +1,6 @@
-CREATE database a;
+DROP DATABASE IF EXISTS MarketingApp;
+CREATE DATABASE  MarketingApp;
+USE MarketingApp;
 
 CREATE TABLE `Users` (
   `Id` bigint NOT NULL AUTO_INCREMENT, 
@@ -54,7 +56,7 @@ ALTER TABLE OrdersOrderedItems AUTO_INCREMENT=4294967296;
 
 
 CREATE TABLE `Merchants` (
-	`Id` INT NOT NULL AUTO_INCREMENT,
+ `Id` INT NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `Dob` date DEFAULT NULL,
@@ -64,10 +66,9 @@ CREATE TABLE `Merchants` (
 
 ALTER TABLE Merchants AUTO_INCREMENT=4294967296;
 
-CREATE TABLE `Migration` (
+CREATE TABLE `DbVersions` (
 	Id INT NOT NULL AUTO_INCREMENT,
-  DbVersion INT NOT NULL,
  	PRIMARY KEY (`Id`)
 );
 
-INSERT INTO `Migration` (DbVersion) VALUES (1);
+INSERT INTO `DbVersions` () VALUES();
