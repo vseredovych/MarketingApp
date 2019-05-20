@@ -65,7 +65,7 @@ namespace DAL.Core
             return parameter;
         }
 
-        public DbDataReader GetDataReader(string commandText, List<IDbDataParameter> parameters)
+        public DbDataReader GetDataReader(string commandText, List<DbParameter> parameters)
         {
             DbDataReader reader = null;
 

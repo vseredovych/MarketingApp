@@ -16,7 +16,6 @@ namespace DAL.Collections
         {
             orderOperations = new OrdersOperations();
             orders = new List<Order>();
-            orders = orderOperations.GetAll();
         }
 
         public void Add(Order order)
@@ -39,6 +38,7 @@ namespace DAL.Collections
 
         public List<Order> GetAll()
         {
+            orders = orderOperations.GetAll();
             return orders;
         }
         public Order GetByID(int id)

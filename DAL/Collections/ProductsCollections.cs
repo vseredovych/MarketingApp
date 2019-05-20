@@ -16,7 +16,6 @@ namespace DAL.Collections
         {
             productOperations = new ProductsOperations();
             products = new List<Product>();
-            products = productOperations.GetAll();
         }
 
         public void Add(Product product)
@@ -41,6 +40,12 @@ namespace DAL.Collections
         {
             return products;
         }
+        public List<Product> GetInRange(int limit, int offset)
+        {
+            products.Clear();
+            products = productOperations.GetInRange(limit, offset);
+            return products;
+        }
         public Product GetByID(int id)
         {
             return products[id];
@@ -49,9 +54,5 @@ namespace DAL.Collections
         {
             return products.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
     }
 }

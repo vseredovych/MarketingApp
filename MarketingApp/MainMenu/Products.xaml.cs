@@ -23,13 +23,28 @@ namespace MarketingApp
     {
         public ProductsCollections Products;// = new ProductRepository();
 
+        int Limit;
+        int Offset;
         public ProductsMenu()
         {
 
             InitializeComponent();
+            Limit = 10;
+            Offset = 1;
             Products = new ProductsCollections();
-            ItemSourceProducts.ItemsSource = Products.GetAll();
+            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
         }
 
+        private void Next_Page_Click(object sender, RoutedEventArgs e)
+        {
+            Offset -= Limit;
+            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+        }
+
+        private void Next_Page_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            Offset += Limit;
+            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+        }
     }
 }

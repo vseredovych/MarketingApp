@@ -55,12 +55,6 @@ namespace DAL.Operations
             using (var connection = dbManager.CreateConnection())
             {
                 connection.Open();
-                //using (var command = dbManager.CreateDbCommand(connection, commandText))
-                //{
-                //foreach (var parameter in GetParametrs(user))
-                //{
-                //    command.Parameters.Add(parameter);
-                //}
                 DbDataReader reader;
                 var command = dbManager.CreateDbCommand(connection, commandText);
                 reader = command.ExecuteReader();
@@ -79,6 +73,35 @@ namespace DAL.Operations
                 //}
             }
 
+        }
+
+        public List<Product> GetInRange(int limit, int offset)
+        {
+
+            string commandText = "Select * from " + databaseTable + " LIMIT @Limit OFFSET @Offset;";
+            List<Product> products = new List<Product>();
+            List<DbParameter> parameters = new List<DbParameter>();
+            parameters.Add(dbManager.CreateParameter("@Limit", limit, DbType.UInt32));
+            parameters.Add(dbManager.CreateParameter("@Offset", offset, DbType.UInt32));
+
+            using (var connection = dbManager.CreateConnection())
+            {
+                connection.Open();
+                DbDataReader reader;
+                //var command = dbManager.CreateDbCommand(connection, commandText);
+                reader = dbManager.GetDataReader(commandText, parameters);
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.Id = Convert.ToInt32(reader["Id"]);
+                    product.Name = reader["Name"].ToString();
+                    product.Price = Convert.ToInt32(reader["Price"]);
+                    product.Status = reader["Status"].ToString();
+                    product.MerchantId = Convert.ToInt32(reader["MerchantId"]);
+                    products.Add(product);
+                }
+                return products;
+            }
         }
 
         public Product GetByID(long id)
