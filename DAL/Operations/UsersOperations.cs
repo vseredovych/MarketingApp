@@ -15,8 +15,8 @@ namespace DAL.Operations
         //CRUD
         public void Insert(User user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, IsActive)" +
-                                 "values (@Id, @FirstName, @LastName, @Dob, @IsActive);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, CurrentSity)" +
+                                 "values (@Id, @FirstName, @LastName, @Dob, @CurrentSity);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -26,7 +26,7 @@ namespace DAL.Operations
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
                 "LastName = @LastName, " +
                 "Dob = @Dob, "           +
-                "IsActive = @IsActive "  +
+                "CurrentSity = @CurrentSity " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -64,7 +64,7 @@ namespace DAL.Operations
                     user.FirstName = reader["FirstName"].ToString();
                     user.LastName = reader["LastName"].ToString();
                     user.Dob = Convert.ToDateTime(reader["Dob"]);
-                    user.IsRoot = Convert.ToBoolean(reader["IsRoot"]);
+                    user.CurrentSity = Convert.ToString(reader["CurrentSity"]);
                     users.Add(user);
                 }
                 return users;
@@ -110,7 +110,7 @@ namespace DAL.Operations
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));
-            parameters.Add(dbManager.CreateParameter("@IsActive", user.IsRoot, DbType.Boolean));
+            parameters.Add(dbManager.CreateParameter("@CurrentSity", user.CurrentSity, DbType.String));
             return parameters;
         }
     }
