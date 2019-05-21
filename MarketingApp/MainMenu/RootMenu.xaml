@@ -13,7 +13,7 @@
 
     <UserControl.Resources>
         <!--<ObjectDataProvider x:Key="userRepository"
-            ObjectType="{x:Type local:MainMenu}" MethodName="GetUsers">
+            ObjectType="{x:Type local:MainMenu}" MethodName="GetMerchants">
         </ObjectDataProvider>-->
 
         <DataTemplate x:Key="staffTemplate">
@@ -39,7 +39,7 @@
                         <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
                         <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />
                         <Button Grid.Column="4" Width="200" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Dob}"  />
-                        <Button Grid.Column="5" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=CurrentSity}"  />
+                        <Button Grid.Column="5" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=CurrentCity}"  />
 
                     </Grid>
                 </Button>

@@ -20,26 +20,26 @@ namespace MarketingApp
     /// <summary>
     /// Логика взаимодействия для People.xaml
     /// </summary>
-    public partial class UsersMenu : UserControl
+    public partial class MerchantsMenu : UserControl
     {
-        public UsersCollections Users;
+        public MerchantsCollections Merchants;
 
-        public UsersMenu()
+        public MerchantsMenu()
         {
 
 
             InitializeComponent();
-            Users = new UsersCollections();
-            ItemSourceUsers.ItemsSource = Users.GetAll();
+            Merchants = new MerchantsCollections();
+            ItemSourceMerchants.ItemsSource = Merchants.GetAll();
             //for (int i = 1; i < 100; i++)
             //{
-            //    Users.Add(new User
+            //    Merchants.Add(new User
             //    {
             //        Id = i,
             //        Dob = Convert.ToDateTime("2019-10-10"),
             //        FirstName = "Name" + 1,
             //        LastName = "LastName" + 1,
-            //        CurrentSity = "Lviv",
+            //        CurrentCity = "Lviv",
             //    }
             // );
             //}

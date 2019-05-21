@@ -61,11 +61,18 @@
                 </ItemsControl>
             </ScrollViewer>
             <Button  Name="Next_Page" Background="#ECEB6A" Height="Auto" Margin="10,408,761,9.6" RenderTransformOrigin="1.3,0.538" Click="Next_Page_Click">
-                <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="ArrowLeft" Foreground="DimGray"  Width="25" Height="25" VerticalAlignment="Center"/>
             </Button>
             <Button  x:Name="Next_Page_Copy" Background="#ECEB6A" Height="Auto" Margin="683,408,88,9.6" RenderTransformOrigin="-0.962,0.663" Click="Next_Page_Copy_Click">
-                <materialDesign:PackIcon Kind="ArrowRight" Width="25" Height="25" VerticalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="ArrowRight" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
             </Button>
+
+            <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="62,408,679,9.6" RenderTransformOrigin="-0.962,0.663" Click="Next_Page_Copy_Click">
+                <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
+            </Button>
+            <TextBox x:Name="MoreThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
+            <TextBox x:Name="LessThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
+
         </Grid>
     </materialDesign:TransitioningContent>
 </UserControl>

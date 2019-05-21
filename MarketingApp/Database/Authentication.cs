@@ -19,9 +19,9 @@ namespace MarketingApp
             MigrationHelper migrationHelper = new MigrationHelper();
 
 
-            migrationHelper.UpdateDb();
+            migrationHelper.Update();
 
-            string querry = "SELECT * FROM Users";
+            string querry = "SELECT * FROM Merchants";
             DbDataReader reader = (DbDataReader)dbMabager.GetDataReader(querry);
 
             return true;

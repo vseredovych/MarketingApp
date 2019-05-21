@@ -2,12 +2,12 @@
 
 namespace DAL.Entities
 {
-    public class User
+    public class Merchant
     {
         public long Id { get; set; }
         public string FirstName { get; set; }
-        public string Mail { get; set; }
-        public string Password { get; set; }
+        public string LastName { get; set; }
         public DateTime Dob { get; set; }
+        public string CurrentCity { get; set; }
     }
 }

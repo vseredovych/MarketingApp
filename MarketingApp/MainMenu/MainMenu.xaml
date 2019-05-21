@@ -77,8 +77,8 @@
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="Users" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Users" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="PeopleOutline" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Merchants" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">

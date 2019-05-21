@@ -5,11 +5,11 @@ USE MarketingApp;
 CREATE TABLE `Users` (
   `Id` bigint NOT NULL AUTO_INCREMENT, 
   `FirstName` varchar(30) NOT NULL,
-  `LastName` varchar(30) NOT NULL,
+  `Mail` varchar(30) NOT NULL,
+  `Password` varchar(30),
   `Dob` date DEFAULT NULL,
-  `CurrentSity` varchar(30),
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `uk_Users_Id` (`Id`)
+  UNIQUE KEY `uk_Merchants_Id` (`Id`)
 );
 
 ALTER TABLE Users AUTO_INCREMENT=4294967296;
@@ -19,7 +19,7 @@ CREATE TABLE `Products` (
   `Name` varchar(30) NOT NULL,
   `Price` double NOT NULL,
   `Status` varchar(30) NOT NULL,
-  `MerchantId` int(11) DEFAULT NULL,
+  `MerchantId` bigint DEFAULT NULL,
   `CreatedAt` datetime NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `uk_Products_Id` (`Id`)
@@ -60,7 +60,7 @@ CREATE TABLE `Merchants` (
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `Dob` date DEFAULT NULL,
-  `CurrentSity` varchar(30),
+  `CurrentCity` varchar(30),
 	PRIMARY KEY (`Id`)
 );
 

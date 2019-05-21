@@ -17,16 +17,15 @@ namespace MarketingApp
     {
 
         ProductsMenu productsMenu;
-        UsersMenu usersMenu;
+        MerchantsMenu usersMenu;
         RootMenu rootMenu;
 
         public MainMenu()
         {
             productsMenu = new ProductsMenu();
-            usersMenu = new UsersMenu();
+            usersMenu = new MerchantsMenu();
             rootMenu = new RootMenu();
             InitializeComponent();
-            /////////////////////
         }
 
 
