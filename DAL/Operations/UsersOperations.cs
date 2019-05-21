@@ -9,7 +9,7 @@ using DAL.Interfaces;
 namespace DAL.Operations
 {
     
-    class UsersOperations : IOperations<User>
+    public class UsersOperations : IOperations<User>
     {
         string databaseTable = "Users";
         DbHelper dbManager = new DbHelper();
@@ -74,18 +74,21 @@ namespace DAL.Operations
         }
         public User GetByID(long id)
         {
-            var parameters = new List<IDbDataParameter>();
+            var parameters = new List<DbParameter>();
             parameters.Add(dbManager.CreateParameter("@Id", id, DbType.Int64));
 
             string commandText = "select * from " + databaseTable + " where Id = @Id;";
-            var dataReader = dbManager.GetDataReader(commandText);
+            var reader = dbManager.GetDataReader(commandText, parameters);
             try
             {
                 var user = new User();
-                while (dataReader.Read())
+                while (reader.Read())
                 {
-                    user.Id = Convert.ToInt64(dataReader["Id"]);
-
+                    user.Id = Convert.ToInt64(reader["Id"]);
+                    user.FirstName = reader["FirstName"].ToString();
+                    user.Mail = reader["Mail"].ToString();
+                    user.Password = Convert.ToString(reader["Password"]);
+                    user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                 }
                 return user;
             }
@@ -95,7 +98,7 @@ namespace DAL.Operations
             }
             finally
             {
-                dataReader.Close();
+                reader.Close();
             }
         }
         public long GetScalarValue(string commandText)

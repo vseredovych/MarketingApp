@@ -7,6 +7,8 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using DAL.Collections;
 using DAL.Entities;
+using DAL.Core;
+using DAL.Operations;
 
 namespace MarketingApp
 {
@@ -15,6 +17,7 @@ namespace MarketingApp
     /// </summary>
     public partial class MainMenu : Window
     {
+        User user;
 
         ProductsMenu productsMenu;
         MerchantsMenu merchantsMenu;
@@ -22,18 +25,25 @@ namespace MarketingApp
         RootMenu rootMenu;
         ProfileMenu profileMenu;
 
+
         public MainMenu(long id)
         {
+            GetUserInfo(id);
+            profileMenu = new ProfileMenu(user);
             productsMenu = new ProductsMenu();
             merchantsMenu = new MerchantsMenu();
             usersMenu = new UsersMenu();
             rootMenu = new RootMenu();
-            profileMenu = new ProfileMenu();
             InitializeComponent();
+            UserName.Text = user.FirstName;
         }
 
 
-
+        private void GetUserInfo(long id)
+        {
+            UsersOperations usersOperations = new UsersOperations();
+            user = usersOperations.GetByID(id);
+        }
         public void DragWindow(object sender, MouseButtonEventArgs args)
         {
             DragMove();

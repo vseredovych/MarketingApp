@@ -8,7 +8,7 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
-    class ProductsOperations : IOperations<Product>
+    public class ProductsOperations : IOperations<Product>
     {
         string databaseTable = "Products";
         DbHelper dbManager = new DbHelper();

@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL.Entities;
+using DAL.Core;
+using System.Data.Common;
+using System.Data;
 
 namespace MarketingApp
 {
@@ -23,10 +26,13 @@ namespace MarketingApp
     public partial class ProfileMenu : UserControl
     {
         public UsersCollections Users;// = new ProductRepository();
+        public DbHelper dbHelper;
+        public User user;
 
-        public ProfileMenu()
+        public ProfileMenu(User user)
         {
             InitializeComponent();
+            FillUserProfileMenu(user);
             //Users = new UsersCollections();
             //ItemSourceMUsers.ItemsSource = Users.GetAll();
 
@@ -44,6 +50,15 @@ namespace MarketingApp
             //}
         }
 
+        private void FillUserProfileMenu(User user)
+        {
+            Id.Text = Convert.ToString(user.Id);
+            FirstName.Text = Convert.ToString(user.FirstName);
+            Mail.Text = Convert.ToString(user.Mail);
+            Password.Text = Convert.ToString(user.Password);
+            AccessLvl.Text = Convert.ToString(user.AccessLvl);
+
+        }
         private void Gimme_Click(object sender, RoutedEventArgs e)
         {
 

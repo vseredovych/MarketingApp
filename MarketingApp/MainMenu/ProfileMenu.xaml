@@ -51,16 +51,19 @@
             <Button Height="450" Width="800"  Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite" Click="Button_Click">
                 <StackPanel HorizontalAlignment="Right" Width="593">
                     <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock FontSize="30" Text="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                    <TextBlock x:Name="Id" FontSize="30" Text="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
 
                     <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock FontSize="30" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                    <TextBlock x:Name="FirstName" FontSize="30" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
 
                     <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" Foreground="DimGray" Margin="5 0 0 0" Grid.ColumnSpan="2"/>
-                    <TextBlock FontSize="30" Text="{Binding Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0,0,5.2,0" Grid.Column="1"/>
+                    <TextBlock x:Name="Mail" FontSize="30" Text="{Binding Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0,0,5.2,0" Grid.Column="1"/>
                     
                     <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock FontSize="30" Text="{Binding Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
+                    <TextBlock x:Name="Password" FontSize="30" Text="{Binding Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
+
+                    <TextBlock Text="AccessLvl:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
+                    <TextBlock x:Name="AccessLvl" FontSize="30" Text="{Binding AccsessLvl}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
                 </StackPanel>
             </Button>
         </Grid>
