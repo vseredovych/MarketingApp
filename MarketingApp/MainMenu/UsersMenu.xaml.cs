@@ -22,14 +22,13 @@ namespace MarketingApp
     /// </summary>
     public partial class UsersMenu : UserControl
     {
-        public ProductsCollections Products;// = new ProductRepository();
+        public MerchantsCollections Merchants;// = new ProductRepository();
 
-        int Limit;
-        int Offset;
         public UsersMenu()
         {
             InitializeComponent();
-
+            Merchants = new MerchantsCollections();
+            ItemSourceMUsers.ItemsSource = Merchants.GetAll();
 
             //for (int i = 6; i < 100; i++)
             //{

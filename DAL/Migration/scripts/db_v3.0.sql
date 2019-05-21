@@ -23,6 +23,18 @@ insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName"
 insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
 insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
 
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+
+
+
+
+
 insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values("Table", 1000,  "not-active", 4294967296, "2019-10-10");
 insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values("Table", 1000,  "not-active", 4294967296, "2019-10-10");
 insert into Products (Name, Price, Status, MerchantId, CreatedAt) Values("Table", 1000,  "not-active", 4294967296, "2019-10-10");

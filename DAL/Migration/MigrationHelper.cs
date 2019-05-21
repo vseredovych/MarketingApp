@@ -74,7 +74,7 @@ namespace MarketingApp.Database.Migration
 
                 for (int i = 1; i <= LAST_VERSION; i++)
                 {
-                    string script = File.ReadAllText(@"C:\Merchants\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
+                    string script = File.ReadAllText(@"C:\Users\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
                     dbHelper.CommandExecuteNonQuery(script);
                 }
             }
@@ -100,7 +100,7 @@ namespace MarketingApp.Database.Migration
                 {
                     for (int i = lastVersion + 1; i <= LAST_VERSION; i++)
                     {
-                        string script = File.ReadAllText(@"C:\Merchants\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
+                        string script = File.ReadAllText(@"C:\Users\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
                         dbHelper.CommandExecuteNonQuery(script);
                     }
                 }

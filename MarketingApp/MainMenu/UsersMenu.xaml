@@ -17,7 +17,7 @@
             ObjectType="{x:Type repo:MainMenu}" MethodName="Products.GetProducts">
         </ObjectDataProvider>-->
 
-        <DataTemplate x:Key="productsTemplate">
+        <DataTemplate x:Key="usersTemplate">
             <Grid Height="200" Width="150" Background="Transparent">
 
                 <Button Height="180" Width="130" Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite">
@@ -28,20 +28,16 @@
                             <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="MerchantId:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=MerchantId}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
-                        </Grid>
-                        <Grid>
-                            <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="PAssword:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                     </StackPanel>
                 </Button>
@@ -52,7 +48,7 @@
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
         <Grid>
             <ScrollViewer VerticalScrollBarVisibility="Auto">
-                <ItemsControl x:Name="ItemSourceProducts"  ItemTemplate="{StaticResource productsTemplate}">
+                <ItemsControl x:Name="ItemSourceMUsers"  ItemTemplate="{StaticResource usersTemplate}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel/>

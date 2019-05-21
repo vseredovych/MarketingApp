@@ -17,13 +17,15 @@ namespace MarketingApp
     {
 
         ProductsMenu productsMenu;
-        MerchantsMenu usersMenu;
+        MerchantsMenu merchantsMenu;
+        UsersMenu usersMenu;
         RootMenu rootMenu;
 
         public MainMenu()
         {
             productsMenu = new ProductsMenu();
-            usersMenu = new MerchantsMenu();
+            merchantsMenu = new MerchantsMenu();
+            usersMenu = new UsersMenu();
             rootMenu = new RootMenu();
             InitializeComponent();
         }
@@ -77,18 +79,16 @@ namespace MarketingApp
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(usersMenu);
+                    GridPrincipal.Children.Add(merchantsMenu);
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(productsMenu);
                     break;
-                //case 2:
-                //    GridPrincipal.Children.Clear();
-                //    productRepository.FillRepositoryWithData();
-
-                //    GridPrincipal.Children.Add(new Products());
-                //    break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(usersMenu);
+                    break;
                 case 4:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(rootMenu);
