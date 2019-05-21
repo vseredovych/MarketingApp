@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="MarketingApp.RootMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MarketingApp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
+
+    <UserControl.Resources>
+        <!--<ObjectDataProvider x:Key="userRepository"
+            ObjectType="{x:Type local:MainMenu}" MethodName="GetUsers">
+        </ObjectDataProvider>-->
+
+        <DataTemplate x:Key="staffTemplate">
+            <Grid Height="120" Background="Transparent">
+                <Button Height="100" Background="#EBEDED"  HorizontalAlignment="Left" BorderThickness="1" BorderBrush="AntiqueWhite">
+                    <Grid  Margin="0 0 0 0" HorizontalAlignment="Left" Width="800" VerticalAlignment="Center" Background="Azure">
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+
+
+                        <!--<Image Grid.Column="0"  Width="100" Height="100" HorizontalAlignment="Left" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />-->
+                        <Button Grid.Column="1" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Id}" />
+                        <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
+                        <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />
+                        <Button Grid.Column="4" Width="200" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Dob}"  />
+                        <Button Grid.Column="5" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=CurrentSity}"  />
+
+                    </Grid>
+                </Button>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+        <Grid x:Name="windowTables" Margin="0,-17,0,-20.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="353.6"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="126*"/>
+                <ColumnDefinition Width="356*"/>
+                <ColumnDefinition Width="189*"/>
+                <ColumnDefinition Width="128*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="grid_tabels" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="375" VerticalAlignment="Top" Width="710" Margin="89.838,61,0,0" RenderTransformOrigin="0.5,0.5" Background="#FFF0F0F0" CanUserReorderColumns="False" ClipboardCopyMode="None" IsSynchronizedWithCurrentItem="True" Grid.Column="2" IsReadOnly="True" Grid.RowSpan="2" CanUserAddRows="False" >
+                <DataGrid.BindingGroup>
+                    <BindingGroup/>
+                </DataGrid.BindingGroup>
+            </DataGrid>
+            <DataGrid x:Name="data_grid_change" Grid.ColumnSpan="3" HorizontalAlignment="Left" CanUserAddRows="False" Height="110" Margin="40.6,27,0,0" VerticalAlignment="Top" Width="600" Visibility="Hidden" AlternationCount="1" FrozenColumnCount="1" Background="White" Grid.Column="3"/>
+            <Grid x:Name="grid_datatable_control"  Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="269" Margin="-15,44,0,0" VerticalAlignment="Top" Width="141">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="21*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="button_delete" Background="#ECEB6A" Foreground="DimGray" FontSize="10" Content="Delete" HorizontalAlignment="Left" Height="20" Margin="10,115,0,0" VerticalAlignment="Top" Width="91" Grid.ColumnSpan="2" Click="Button_delete_Click" />
+                <Button x:Name="button_edit" Background="#ECEB6A" Foreground="DimGray" FontSize="10" Content="Edit table" HorizontalAlignment="Left" Height="20" Margin="10,90,0,0" VerticalAlignment="Top" Width="91" Click="button_edit_Click" Grid.ColumnSpan="2"/>
+                <Button x:Name="button_create_new" Background="#ECEB6A" Foreground="DimGray" FontSize="10" Content="Create new" HorizontalAlignment="Left" Height="20" Margin="10,65,0,0" VerticalAlignment="Top" Width="91" Click="button_create_new_Click" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Grid x:Name="grid_ok_cancel"  HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="158" Margin="9.838,60.4,0,0" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" >
+                <Button x:Name="button_cancel_changes" Background="#ECEB6A" Foreground="DimGray" FontSize="10" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Width="64" Height="25" Click="Button_cancel_changes_Click" RenderTransformOrigin="2.475,-0.306" Margin="0,30,20,-10"/>
+                <Button x:Name="button_accept_changes" Background="#ECEB6A" Foreground="DimGray" FontSize="10" Content="Ok" HorizontalAlignment="Left" Height="25"  VerticalAlignment="Top" Width="60" Click="Button_accept_changes_Click" RenderTransformOrigin="-0.798,0.739" Margin="0,30,0,-10"/>
+            </Grid>
+            <ComboBox x:Name="combobox_choose_table" Background="#ECEB6A" Foreground="DimGray" HorizontalAlignment="Left" Height="26" Margin="9.838,18,0,0" VerticalAlignment="Top" Width="158" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2" RenderTransformOrigin="0.63,0.477" Grid.Column="2"/>
+        </Grid>
+    </materialDesign:TransitioningContent>
+</UserControl>

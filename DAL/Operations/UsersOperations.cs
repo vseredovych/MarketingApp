@@ -60,7 +60,7 @@ namespace DAL.Operations
                 while (reader.Read())
                 {
                     User user = new User();
-                    user.Id = Convert.ToInt32(reader["Id"]);
+                    user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
                     user.LastName = reader["LastName"].ToString();
                     user.Dob = Convert.ToDateTime(reader["Dob"]);
@@ -106,7 +106,7 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(User user)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));

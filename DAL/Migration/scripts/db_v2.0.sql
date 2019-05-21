@@ -15,7 +15,7 @@ CREATE TABLE `Users` (
 ALTER TABLE Users AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `Products` (
-  `Id` bigint NOT NULL AUTO_INCREMENT,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(30) NOT NULL,
   `Price` double NOT NULL,
   `Status` varchar(30) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `Products` (
 ALTER TABLE Products AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `Orders` (
-  `Id` bigint NOT NULL AUTO_INCREMENT,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserId` varchar(30) NOT NULL,
   `Status` varchar(30) NOT NULL,
   `CreatedAt` varchar(30) NOT NULL,
@@ -39,8 +39,8 @@ CREATE TABLE `Orders` (
 ALTER TABLE Orders AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `OrderedItems` (
-	`OrderId` bigint NOT NULL AUTO_INCREMENT,
-	`ProductId` bigint NOT NULL,
+	`OrderId` INT NOT NULL AUTO_INCREMENT,
+	`ProductId` INT NOT NULL,
 	`Quantity` INT NOT NULL,
 	PRIMARY KEY (`OrderId`)
 );
@@ -48,15 +48,15 @@ CREATE TABLE `OrderedItems` (
 ALTER TABLE OrderedItems AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `OrdersOrderedItems` (
-	`OrderId` bigint NOT NULL,
-	`OrderedItemId` bigint NOT NULL
+	`OrderId` INT NOT NULL,
+	`OrderedItemId` INT NOT NULL
 );
 
 ALTER TABLE OrdersOrderedItems AUTO_INCREMENT=4294967296;
 
 
 CREATE TABLE `Merchants` (
- `Id` bigint NOT NULL AUTO_INCREMENT,
+ `Id` INT NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
   `Dob` date DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `Merchants` (
 ALTER TABLE Merchants AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `DbVersions` (
-	Id int NOT NULL AUTO_INCREMENT,
+	Id INT NOT NULL AUTO_INCREMENT,
  	PRIMARY KEY (`Id`)
 );
 

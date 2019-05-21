@@ -42,7 +42,7 @@ namespace DAL.Operations
         {
             string commandText = "Delete from " + databaseTable + " where Id = @Id";
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", id, DbType.UInt32));
+            parameters.Add(dbManager.CreateParameter("@Id", id, DbType.UInt64));
             dbManager.CommandExecuteNonQuery(commandText, parameters);
         }
 
@@ -106,7 +106,7 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(Order order)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", order.Id, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", order.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@UserId", order.UserId, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Status", 50, order.Status, DbType.String));
             parameters.Add(dbManager.CreateParameter("@CreatedAt", order.CreatedAt, DbType.DateTime));

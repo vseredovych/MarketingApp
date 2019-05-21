@@ -81,8 +81,8 @@ namespace DAL.Operations
             string commandText = "Select * from " + databaseTable + " LIMIT @Limit OFFSET @Offset;";
             List<Product> products = new List<Product>();
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Limit", limit, DbType.UInt32));
-            parameters.Add(dbManager.CreateParameter("@Offset", offset, DbType.UInt32));
+            parameters.Add(dbManager.CreateParameter("@Limit", limit, DbType.Int64));
+            parameters.Add(dbManager.CreateParameter("@Offset", offset, DbType.Int64));
 
             using (var connection = dbManager.CreateConnection())
             {
@@ -93,11 +93,11 @@ namespace DAL.Operations
                 while (reader.Read())
                 {
                     Product product = new Product();
-                    product.Id = Convert.ToInt32(reader["Id"]);
+                    product.Id = Convert.ToInt64(reader["Id"]);
                     product.Name = reader["Name"].ToString();
                     product.Price = Convert.ToInt32(reader["Price"]);
                     product.Status = reader["Status"].ToString();
-                    product.MerchantId = Convert.ToInt32(reader["MerchantId"]);
+                    product.MerchantId = Convert.ToInt64(reader["MerchantId"]);
                     products.Add(product);
                 }
                 return products;
@@ -140,8 +140,8 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(Product product)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", product.Id, DbType.Int32));
-            parameters.Add(dbManager.CreateParameter("@MerchantId", product.MerchantId, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", product.Id, DbType.Int64));
+            parameters.Add(dbManager.CreateParameter("@MerchantId", product.MerchantId, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@Name", 50, product.Name, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Price", product.Price, DbType.Double));
             parameters.Add(dbManager.CreateParameter("@Status", 50, product.Status, DbType.String));

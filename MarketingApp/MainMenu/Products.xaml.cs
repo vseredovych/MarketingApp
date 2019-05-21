@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL.Entities;
 
 namespace MarketingApp
 {
@@ -27,12 +28,24 @@ namespace MarketingApp
         int Offset;
         public ProductsMenu()
         {
-
             InitializeComponent();
             Limit = 10;
             Offset = 1;
             Products = new ProductsCollections();
             ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+
+            //for (int i = 6; i < 100; i++)
+            //{
+            //    Products.Add(new Product
+            //    {
+            //        Id = i,
+            //        Name = "Name" + i,
+            //        CreatedAt = Convert.ToDateTime("2019-10-10"),
+            //        MerchantId = i,
+            //        Status = "Present"
+            //    }
+            //    );
+            //}
         }
 
         private void Next_Page_Click(object sender, RoutedEventArgs e)

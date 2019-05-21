@@ -8,24 +8,51 @@ using System.Collections.ObjectModel;
 using DAL.Collections;
 using DAL.Entities;
 
-namespace MarketingApp
+namespace MarketingApp.AppMainMenu
 {
     /// <summary>
     /// Логика взаимодействия для MainMenu.xaml
     /// </summary>
-    public partial class MainMenu : Window
+    public partial class AppMainMenu : Window
     {
 
         ProductsMenu productsMenu;
         UsersMenu usersMenu;
-        RootMenu rootMenu;
 
-        public MainMenu()
+        public AppMainMenu()
         {
+            //productRepository.FillRepositoryWithData();
+            //userRepository.FillRepositoryWithData();
+            //ItemS = productRepository();
             productsMenu = new ProductsMenu();
             usersMenu = new UsersMenu();
-            rootMenu = new RootMenu();
+
+            //for (int i = 6; i < 100; i++)
+            //{
+            //    Products.Add(new Product
+            //    {
+            //        Id = i,
+            //        Name = "Name" + i,
+            //        CreatedAt = Convert.ToDateTime("2019-10-10"),
+            //        MerchantId = i,
+            //        Status = "Present"
+            //    }
+            //);
+            //for (int i = 1; i < 100; i++)
+            //{
+            //    Users.Add(new User
+            //    {
+            //        Id = i,
+            //        Dob = Convert.ToDateTime("2019-10-10"),
+            //        FirstName = "Name" + 1,
+            //        LastName = "LastName" + 1,
+            //        CurrentSity = "Lviv",
+            //    }
+            //    );
+            //}
+
             InitializeComponent();
+           
         }
 
 
@@ -89,10 +116,10 @@ namespace MarketingApp
 
                 //    GridPrincipal.Children.Add(new Products());
                 //    break;
-                case 4:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(rootMenu);
-                    break;
+                //case 1:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlEscolha());
+                //    break;
                 default:
                     break;
             }
