@@ -61,7 +61,7 @@
     <Compile Include="Operations\OrdersOperations.cs" />
     <Compile Include="Operations\ProductsOperations.cs" />
     <Compile Include="Operations\MerchantsOperations.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Resource Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Migration\scripts\db_v3.0.sql" />

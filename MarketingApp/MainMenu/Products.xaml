@@ -22,7 +22,7 @@
 
                 <Button Height="180" Width="130" Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite">
                     <StackPanel>
-                        <!--<Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                        <Image Source="pack://application:,,,/DAL/Resources/Png/Images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         <Grid>
                             <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
                             <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
