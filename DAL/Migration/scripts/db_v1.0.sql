@@ -7,7 +7,7 @@ CREATE TABLE `Users` (
   `FirstName` varchar(30) NOT NULL,
   `Mail` varchar(30) NOT NULL,
   `Password` varchar(30),
-  `Dob` date DEFAULT NULL,
+  `AccessLvl` int NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `uk_Merchants_Id` (`Id`)
 );

@@ -8,6 +8,7 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
+    
     class UsersOperations : IOperations<User>
     {
         string databaseTable = "Users";
@@ -15,8 +16,8 @@ namespace DAL.Operations
         //CRUD
         public void Insert(User user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password)" +
-                                 "values (@Id, @FirstName, @Mail, @Password);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Mail, @Password, AccessLvl);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -26,6 +27,7 @@ namespace DAL.Operations
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
                 "Mail = @Mail, " +
                 "Password = @Password " +
+                "AccessLvl = @AccessLvl " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -63,6 +65,7 @@ namespace DAL.Operations
                     user.FirstName = reader["FirstName"].ToString();
                     user.Mail = reader["Mail"].ToString();
                     user.Password = Convert.ToString(reader["Password"]);
+                    user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                     users.Add(user);
                 }
                 return users;
@@ -108,6 +111,8 @@ namespace DAL.Operations
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Mail", 50, user.Mail, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Password", user.Password, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@AccessLvl", user.Id, DbType.Int32));
+
             return parameters;
         }
     }

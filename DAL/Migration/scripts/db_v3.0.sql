@@ -23,13 +23,12 @@ insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName"
 insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
 insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
 
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
-insert into Users (FirstName, Mail, Password) Values("FirstName", "Mail", "Password");
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
+
 
 
 

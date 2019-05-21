@@ -9,7 +9,7 @@
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
              FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-             d:DesignHeight="450" d:DesignWidth="800"  Foreground="Black" Background="Transparent">
+             d:DesignHeight="450"  Foreground="Black" Background="Transparent" Width="712.8">
 
     <UserControl.Resources>
         <!--<ObjectDataProvider x:Key="userRepository"
@@ -17,9 +17,9 @@
         </ObjectDataProvider>-->
 
         <DataTemplate x:Key="staffTemplate">
-            <Grid Height="120" Background="Transparent">
-                <Button Height="100" Background="#EBEDED"  HorizontalAlignment="Left" BorderThickness="1" BorderBrush="AntiqueWhite">
-                    <Grid  Margin="0 0 0 0" HorizontalAlignment="Left" Width="800" VerticalAlignment="Center" Background="Azure">
+            <Grid Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+                <Button Background="#EBEDED" Height="50" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="AntiqueWhite">
+                    <Grid  Margin="0 0 0 0" HorizontalAlignment="Left" Width="900" VerticalAlignment="Top" Background="Transparent">
                         <Grid.RowDefinitions>
                             <RowDefinition ></RowDefinition>
                         </Grid.RowDefinitions>
@@ -47,9 +47,9 @@
         </DataTemplate>
     </UserControl.Resources>
 
-    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-        <Grid>
-            <Grid Margin="0 -10 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="710" Height="40" Background="Azure">
+    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="0,0,18.8,-0.4">
+        <Grid Margin="0,0,0.4,-6.4">
+            <Grid Margin="0,-10,-118.8,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="706" Height="40" Background="Azure">
                 <Grid Margin="0 0 0 0" Background="Azure" VerticalAlignment="Top" HorizontalAlignment="Left" Width="700">
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -71,9 +71,17 @@
                     <Button Grid.Column="5" Width="100" FontSize="12" Content="CurrentCity" Background="#ECEB6A" Foreground="DimGray"/>
                 </Grid>
             </Grid>
-            <Grid Margin="0 30 0 0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ItemsControl x:Name="ItemSourceMerchants" Margin="-15 0 0 0"  ItemTemplate="{StaticResource staffTemplate}">
+            <Grid Margin="-21,0,-70,30">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" RenderTransformOrigin="0.5,0.5" Margin="1,43,-1,19">
+                    <ScrollViewer.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-0.49"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="-1.791"/>
+                        </TransformGroup>
+                    </ScrollViewer.RenderTransform>
+                    <ItemsControl x:Name="ItemSourceMerchants"  ItemTemplate="{StaticResource staffTemplate}" Width="758" >
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Vertical"/>
@@ -82,6 +90,9 @@
                     </ItemsControl>
                 </ScrollViewer>
             </Grid>
+            <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="10,418,731,0" RenderTransformOrigin="-0.962,0.663" Click="Gimme_Click" >
+                <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
+            </Button>
         </Grid>
     </materialDesign:TransitioningContent>
 </UserControl>
