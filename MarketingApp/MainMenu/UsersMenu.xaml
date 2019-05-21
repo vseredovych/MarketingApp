@@ -56,11 +56,14 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </ScrollViewer>
-            <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="62,408,679,9.6" RenderTransformOrigin="-0.962,0.663" >
+            <!--<Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="62,408,679,9.6" RenderTransformOrigin="-0.962,0.663" Click="Gimme_Click" >
                 <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
-            </Button>
-            <TextBox x:Name="MoreThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
-            <TextBox x:Name="LessThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
+            </Button>-->
+            <!--<TextBox x:Name="MoreThen" TextWrapping="Wrap" Text="TextBox" Margin="217,499,512,-80.4"/>
+            <TextBox x:Name="LessThen" TextWrapping="Wrap" Text="TextBox" Margin="357,499,386,-80.4" RenderTransformOrigin="-0.818,0.504"/>
+            <Label Content="Price MoreThen" Margin="78,499,620,-80.4"/>
+            <Label Content="LessThen"/>
+            <Label Content="LessTHen" Margin="267,499,431,-80.4"/>-->
 
         </Grid>
     </materialDesign:TransitioningContent>

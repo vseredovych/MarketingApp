@@ -22,13 +22,13 @@ namespace MarketingApp
     /// </summary>
     public partial class UsersMenu : UserControl
     {
-        public MerchantsCollections Merchants;// = new ProductRepository();
+        public UsersCollections Users;// = new ProductRepository();
 
         public UsersMenu()
         {
             InitializeComponent();
-            Merchants = new MerchantsCollections();
-            ItemSourceMUsers.ItemsSource = Merchants.GetAll();
+            Users = new UsersCollections();
+            ItemSourceMUsers.ItemsSource = Users.GetAll();
 
             //for (int i = 6; i < 100; i++)
             //{
@@ -42,6 +42,11 @@ namespace MarketingApp
             //    }
             //    );
             //}
+        }
+
+        private void Gimme_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
