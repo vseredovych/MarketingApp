@@ -145,15 +145,13 @@ namespace DAL.Core
             IDataReader reader = null;
             //try
             //{
-                using (var connection = this.CreateConnection())
-                {
+            var connection = this.CreateConnection();
                     connection.Open();
 
-                    var command = this.CreateDbCommand(connection, commandText);
+            var command = this.CreateDbCommand(connection, commandText);
 
-                    reader = command.ExecuteReader();
-                    return reader;
-                }
+            reader = command.ExecuteReader();
+            return reader;
             //}
             //catch ()
             //{

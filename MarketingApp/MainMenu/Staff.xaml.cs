@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL.Entities;
 
 namespace MarketingApp
 {
@@ -30,6 +31,18 @@ namespace MarketingApp
             InitializeComponent();
             Users = new UsersCollections();
             ItemSourceUsers.ItemsSource = Users.GetAll();
+            //for (int i = 1; i < 100; i++)
+            //{
+            //    Users.Add(new User
+            //    {
+            //        Id = i,
+            //        Dob = Convert.ToDateTime("2019-10-10"),
+            //        FirstName = "Name" + 1,
+            //        LastName = "LastName" + 1,
+            //        CurrentSity = "Lviv",
+            //    }
+            // );
+            //}
         }
 
         private void Delete_User_Click(object sender, RoutedEventArgs e)
