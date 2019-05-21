@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Common;
 using DAL.Core;
 using MarketingApp.Database.Migration;
+using System.Data;
 
 namespace MarketingApp
 
@@ -13,31 +14,27 @@ namespace MarketingApp
     public class Authentication
     {
 
-        public static bool userAuthentication(string user, string password)
+        public static long userAuthentication(string mail, string password)
         {
-            DbHelper dbMabager = new DbHelper();
+            DbHelper dbManager = new DbHelper();
             MigrationHelper migrationHelper = new MigrationHelper();
 
 
-            migrationHelper.UpdateDb();
+            migrationHelper.Update();
 
-            string querry = "SELECT * FROM Users";
-            DbDataReader reader = (DbDataReader)dbMabager.GetDataReader(querry);
+            string querryForPassword = "SELECT Password FROM Users WHERE Mail=@Mail";
+            string querryForId = "SELECT Id FROM Users WHERE Mail=@Mail";
 
-            return true;
+            List<DbParameter> parameters = new List<DbParameter>();
 
-            while (reader.Read())
+            parameters.Add(dbManager.CreateParameter("@Mail", mail, DbType.String));
+
+
+            if ((string)dbManager.GetScalarValue(querryForPassword, parameters) == password)
             {
-                if (user == reader["User"].ToString())
-                {
-                    if (password == reader["Password"].ToString())
-                    {
-                        reader.Close();
-                        return true;
-                    }
-                }
+                return (long)dbManager.GetScalarValue(querryForId, parameters);
             }
-            return false;
+            return -1;
         }
     }
 }

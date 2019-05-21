@@ -44,23 +44,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Collections\UsersCollections.cs" />
     <Compile Include="Collections\OrdersCollections.cs" />
     <Compile Include="Collections\ProductsCollections.cs" />
-    <Compile Include="Collections\UsersCollections.cs" />
+    <Compile Include="Collections\MerchantsCollections.cs" />
     <Compile Include="Core\DbHelper.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\Merchant.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IEntityCollection.cs" />
     <Compile Include="Interfaces\IOperations.cs" />
     <Compile Include="Migration\MigrationHelper.cs" />
+    <Compile Include="Operations\UsersOperations.cs" />
     <Compile Include="Operations\OrdersOperations.cs" />
     <Compile Include="Operations\ProductsOperations.cs" />
-    <Compile Include="Operations\UsersOperations.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Operations\MerchantsOperations.cs" />
+    <Resource Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Migration\scripts\db_v3.0.sql" />
+    <Content Include="Migration\scripts\db_v2.0.sql" />
     <Content Include="Migration\scripts\db_v1.0.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,7 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
+    
     class UsersOperations : IOperations<User>
     {
         string databaseTable = "Users";
@@ -15,8 +16,8 @@ namespace DAL.Operations
         //CRUD
         public void Insert(User user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, CurrentSity)" +
-                                 "values (@Id, @FirstName, @LastName, @Dob, @CurrentSity);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Mail, @Password, AccessLvl);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -24,9 +25,9 @@ namespace DAL.Operations
         public void Update(User user)
         {
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
-                "LastName = @LastName, " +
-                "Dob = @Dob, "           +
-                "CurrentSity = @CurrentSity " +
+                "Mail = @Mail, " +
+                "Password = @Password " +
+                "AccessLvl = @AccessLvl " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -60,11 +61,11 @@ namespace DAL.Operations
                 while (reader.Read())
                 {
                     User user = new User();
-                    user.Id = Convert.ToInt32(reader["Id"]);
+                    user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
-                    user.LastName = reader["LastName"].ToString();
-                    user.Dob = Convert.ToDateTime(reader["Dob"]);
-                    user.CurrentSity = Convert.ToString(reader["CurrentSity"]);
+                    user.Mail = reader["Mail"].ToString();
+                    user.Password = Convert.ToString(reader["Password"]);
+                    user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                     users.Add(user);
                 }
                 return users;
@@ -106,11 +107,12 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(User user)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));
-            parameters.Add(dbManager.CreateParameter("@CurrentSity", user.CurrentSity, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Mail", 50, user.Mail, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Password", user.Password, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@AccessLvl", user.Id, DbType.Int32));
+
             return parameters;
         }
     }

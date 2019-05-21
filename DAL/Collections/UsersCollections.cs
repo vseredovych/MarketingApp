@@ -48,9 +48,5 @@ namespace DAL.Collections
         {
             return users.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
     }
 }

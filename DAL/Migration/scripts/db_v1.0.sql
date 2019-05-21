@@ -5,21 +5,21 @@ USE MarketingApp;
 CREATE TABLE `Users` (
   `Id` bigint NOT NULL AUTO_INCREMENT, 
   `FirstName` varchar(30) NOT NULL,
-  `LastName` varchar(30) NOT NULL,
-  `Dob` date DEFAULT NULL,
-  `CurrentSity` varchar(30),
+  `Mail` varchar(30) NOT NULL,
+  `Password` varchar(30),
+  `AccessLvl` int NOT NULL,
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `uk_Users_Id` (`Id`)
+  UNIQUE KEY `uk_Merchants_Id` (`Id`)
 );
 
 ALTER TABLE Users AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `Products` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` bigint NOT NULL AUTO_INCREMENT,
   `Name` varchar(30) NOT NULL,
   `Price` double NOT NULL,
   `Status` varchar(30) NOT NULL,
-  `MerchantId` int(11) DEFAULT NULL,
+  `MerchantId` bigint DEFAULT NULL,
   `CreatedAt` datetime NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `uk_Products_Id` (`Id`)
@@ -28,7 +28,7 @@ CREATE TABLE `Products` (
 ALTER TABLE Products AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `Orders` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` bigint NOT NULL AUTO_INCREMENT,
   `UserId` varchar(30) NOT NULL,
   `Status` varchar(30) NOT NULL,
   `CreatedAt` varchar(30) NOT NULL,
@@ -39,8 +39,8 @@ CREATE TABLE `Orders` (
 ALTER TABLE Orders AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `OrderedItems` (
-	`OrderId` INT NOT NULL AUTO_INCREMENT,
-	`ProductId` INT NOT NULL,
+	`OrderId` bigint NOT NULL AUTO_INCREMENT,
+	`ProductId` bigint NOT NULL,
 	`Quantity` INT NOT NULL,
 	PRIMARY KEY (`OrderId`)
 );
@@ -48,26 +48,26 @@ CREATE TABLE `OrderedItems` (
 ALTER TABLE OrderedItems AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `OrdersOrderedItems` (
-	`OrderId` INT NOT NULL,
-	`OrderedItemId` INT NOT NULL
+	`OrderId` bigint NOT NULL,
+	`OrderedItemId` bigint NOT NULL
 );
 
 ALTER TABLE OrdersOrderedItems AUTO_INCREMENT=4294967296;
 
 
 CREATE TABLE `Merchants` (
- `Id` INT NOT NULL AUTO_INCREMENT,
+ `Id` bigint NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
-  `Dob` date DEFAULT NULL,
-  `CurrentSity` varchar(30),
+  `Salary` bigint NOT NULL,
+  `CurrentCity` varchar(30),
 	PRIMARY KEY (`Id`)
 );
 
 ALTER TABLE Merchants AUTO_INCREMENT=4294967296;
 
 CREATE TABLE `DbVersions` (
-	Id INT NOT NULL AUTO_INCREMENT,
+	Id int NOT NULL AUTO_INCREMENT,
  	PRIMARY KEY (`Id`)
 );
 

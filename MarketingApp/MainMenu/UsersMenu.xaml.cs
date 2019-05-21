@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL.Entities;
 
 namespace MarketingApp
 {
@@ -21,18 +22,29 @@ namespace MarketingApp
     /// </summary>
     public partial class UsersMenu : UserControl
     {
-        public UsersCollections Users;
+        public UsersCollections Users;// = new ProductRepository();
 
         public UsersMenu()
         {
-
-
             InitializeComponent();
             Users = new UsersCollections();
-            ItemSourceUsers.ItemsSource = Users.GetAll();
+            ItemSourceMUsers.ItemsSource = Users.GetAll();
+
+            //for (int i = 6; i < 100; i++)
+            //{
+            //    Products.Add(new Product
+            //    {
+            //        Id = i,
+            //        Name = "Name" + i,
+            //        CreatedAt = Convert.ToDateTime("2019-10-10"),
+            //        MerchantId = i,
+            //        Status = "Present"
+            //    }
+            //    );
+            //}
         }
 
-        private void Delete_User_Click(object sender, RoutedEventArgs e)
+        private void Gimme_Click(object sender, RoutedEventArgs e)
         {
 
         }

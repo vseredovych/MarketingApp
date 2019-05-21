@@ -1,10 +1,10 @@
-﻿<Window x:Class="MarketingApp.MainMenu"
+﻿<Window x:Class="MarketingApp.AppMainMenu.Main"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-
+        xmlns:local="clr-namespace:MarketingApp.AppMainMenu"
         mc:Ignorable="d" Title="MainWindow" Height="600" Width="1080" WindowStyle="None" Foreground="White" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
     <Window.Resources>
@@ -83,20 +83,20 @@
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="PeopleOutline" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Merchants" VerticalAlignment="Center" Margin="20 10"/>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="BoxVariant" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
                             <TextBlock Text="Products" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="KeyChange" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
-                            <TextBlock Text="Edit menu" VerticalAlignment="Center" Margin="20 10"/>
+                            <materialDesign:PackIcon Kind="Message" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Messages" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="GithubBox" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="GitHub" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
 
