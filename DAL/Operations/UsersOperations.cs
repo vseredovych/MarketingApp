@@ -8,15 +8,16 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
-    class UsersOperations : IOperations<User>
+    
+    public class UsersOperations : IOperations<User>
     {
         string databaseTable = "Users";
         DbHelper dbManager = new DbHelper();
         //CRUD
         public void Insert(User user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, IsActive)" +
-                                 "values (@Id, @FirstName, @LastName, @Dob, @IsActive);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Mail, @Password, AccessLvl);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -24,9 +25,9 @@ namespace DAL.Operations
         public void Update(User user)
         {
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
-                "LastName = @LastName, " +
-                "Dob = @Dob, "           +
-                "IsActive = @IsActive "  +
+                "Mail = @Mail, " +
+                "Password = @Password " +
+                "AccessLvl = @AccessLvl " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -60,11 +61,11 @@ namespace DAL.Operations
                 while (reader.Read())
                 {
                     User user = new User();
-                    user.Id = Convert.ToInt32(reader["Id"]);
+                    user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
-                    user.LastName = reader["LastName"].ToString();
-                    user.Dob = Convert.ToDateTime(reader["Dob"]);
-                    user.IsRoot = Convert.ToBoolean(reader["IsRoot"]);
+                    user.Mail = reader["Mail"].ToString();
+                    user.Password = Convert.ToString(reader["Password"]);
+                    user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                     users.Add(user);
                 }
                 return users;
@@ -73,18 +74,21 @@ namespace DAL.Operations
         }
         public User GetByID(long id)
         {
-            var parameters = new List<IDbDataParameter>();
+            var parameters = new List<DbParameter>();
             parameters.Add(dbManager.CreateParameter("@Id", id, DbType.Int64));
 
             string commandText = "select * from " + databaseTable + " where Id = @Id;";
-            var dataReader = dbManager.GetDataReader(commandText);
+            var reader = dbManager.GetDataReader(commandText, parameters);
             try
             {
                 var user = new User();
-                while (dataReader.Read())
+                while (reader.Read())
                 {
-                    user.Id = Convert.ToInt64(dataReader["Id"]);
-
+                    user.Id = Convert.ToInt64(reader["Id"]);
+                    user.FirstName = reader["FirstName"].ToString();
+                    user.Mail = reader["Mail"].ToString();
+                    user.Password = Convert.ToString(reader["Password"]);
+                    user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                 }
                 return user;
             }
@@ -94,7 +98,7 @@ namespace DAL.Operations
             }
             finally
             {
-                dataReader.Close();
+                reader.Close();
             }
         }
         public long GetScalarValue(string commandText)
@@ -106,11 +110,12 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(User user)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));
-            parameters.Add(dbManager.CreateParameter("@IsActive", user.IsRoot, DbType.Boolean));
+            parameters.Add(dbManager.CreateParameter("@Mail", 50, user.Mail, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Password", user.Password, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@AccessLvl", user.Id, DbType.Int32));
+
             return parameters;
         }
     }

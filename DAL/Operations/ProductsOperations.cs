@@ -8,14 +8,14 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
-    class ProductsOperations : IOperations<Product>
+    public class ProductsOperations : IOperations<Product>
     {
         string databaseTable = "Products";
         DbHelper dbManager = new DbHelper();
         //CRUD
         public void Insert(Product products)
         {
-            string commandText = "Insert into" + databaseTable + "(Id, MerchantId, Name, Price, Status, CreateAt)" +
+            string commandText = "Insert into " + databaseTable + "(Id, MerchantId, Name, Price, Status, CreatedAt)" +
                                  "values (@Id, @MerchantId, @Name, @Price, @Status, @CreatedAt);";
             var parameters = GetParametrs(products);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -27,7 +27,7 @@ namespace DAL.Operations
                 "Name = @Name, " +
                 "Price = @Price, " +
                 "Status = @Status " +
-                "CreateAt = @CreateAt" +
+                "CreatedAt = @CreatedAt" +
                 "Where Id = @Id;";
             var parameters = GetParametrs(products);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
@@ -55,12 +55,6 @@ namespace DAL.Operations
             using (var connection = dbManager.CreateConnection())
             {
                 connection.Open();
-                //using (var command = dbManager.CreateDbCommand(connection, commandText))
-                //{
-                //foreach (var parameter in GetParametrs(user))
-                //{
-                //    command.Parameters.Add(parameter);
-                //}
                 DbDataReader reader;
                 var command = dbManager.CreateDbCommand(connection, commandText);
                 reader = command.ExecuteReader();
@@ -79,6 +73,35 @@ namespace DAL.Operations
                 //}
             }
 
+        }
+
+        public List<Product> GetInRange(int limit, int offset)
+        {
+
+            string commandText = "Select * from " + databaseTable + " LIMIT @Limit OFFSET @Offset;";
+            List<Product> products = new List<Product>();
+            List<DbParameter> parameters = new List<DbParameter>();
+            parameters.Add(dbManager.CreateParameter("@Limit", limit, DbType.Int64));
+            parameters.Add(dbManager.CreateParameter("@Offset", offset, DbType.Int64));
+
+            using (var connection = dbManager.CreateConnection())
+            {
+                connection.Open();
+                DbDataReader reader;
+                //var command = dbManager.CreateDbCommand(connection, commandText);
+                reader = dbManager.GetDataReader(commandText, parameters);
+                while (reader.Read())
+                {
+                    Product product = new Product();
+                    product.Id = Convert.ToInt64(reader["Id"]);
+                    product.Name = reader["Name"].ToString();
+                    product.Price = Convert.ToInt32(reader["Price"]);
+                    product.Status = reader["Status"].ToString();
+                    product.MerchantId = Convert.ToInt64(reader["MerchantId"]);
+                    products.Add(product);
+                }
+                return products;
+            }
         }
 
         public Product GetByID(long id)
@@ -117,8 +140,8 @@ namespace DAL.Operations
         public List<DbParameter> GetParametrs(Product product)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-            parameters.Add(dbManager.CreateParameter("@Id", product.Id, DbType.Int32));
-            parameters.Add(dbManager.CreateParameter("@MerchantId", product.MerchantId, DbType.Int32));
+            parameters.Add(dbManager.CreateParameter("@Id", product.Id, DbType.Int64));
+            parameters.Add(dbManager.CreateParameter("@MerchantId", product.MerchantId, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@Name", 50, product.Name, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Price", product.Price, DbType.Double));
             parameters.Add(dbManager.CreateParameter("@Status", 50, product.Status, DbType.String));

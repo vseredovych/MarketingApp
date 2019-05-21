@@ -14,25 +14,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL.Entities;
+using DAL.Core;
+using System.Data.Common;
+using System.Data;
 
 namespace MarketingApp
 {
     /// <summary>
     /// Логика взаимодействия для People.xaml
     /// </summary>
-    public partial class ProductsMenu : UserControl
+    public partial class ProfileMenu : UserControl
     {
-        public ProductsCollections Products;// = new ProductRepository();
+        public UsersCollections Users;// = new ProductRepository();
+        public DbHelper dbHelper;
+        public User user;
 
-        int Limit;
-        int Offset;
-        public ProductsMenu()
+        public ProfileMenu(User user)
         {
             InitializeComponent();
-            Limit = 10;
-            Offset = 1;
-            Products = new ProductsCollections();
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+            FillUserProfileMenu(user);
+            //Users = new UsersCollections();
+            //ItemSourceMUsers.ItemsSource = Users.GetAll();
 
             //for (int i = 6; i < 100; i++)
             //{
@@ -48,21 +50,23 @@ namespace MarketingApp
             //}
         }
 
-        private void Next_Page_Click(object sender, RoutedEventArgs e)
+        private void FillUserProfileMenu(User user)
         {
-            if (!(Offset - Limit < 0)){
-                Offset -= Limit;
-            }
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+            Id.Text = Convert.ToString(user.Id);
+            FirstName.Text = Convert.ToString(user.FirstName);
+            Mail.Text = Convert.ToString(user.Mail);
+            Password.Text = Convert.ToString(user.Password);
+            AccessLvl.Text = Convert.ToString(user.AccessLvl);
+
+        }
+        private void Gimme_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
-        private void Next_Page_Copy_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!(Offset + Limit > Products.GetTableCount()))
-            {
-                Offset += Limit;
-            }
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+
         }
     }
 }

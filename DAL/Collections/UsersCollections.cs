@@ -4,13 +4,12 @@ using DAL.Operations;
 using DAL.Entities;
 using DAL.Interfaces;
 
-namespace Models.Collections
+namespace DAL.Collections
 {
     public class UsersCollections : IEntityCollection<User>
     {
         private List<User> users;
         private UsersOperations userOperations;
-        //private const int EntityTablesCount = 6;
 
         public UsersCollections()
         {
@@ -49,9 +48,5 @@ namespace Models.Collections
         {
             return users.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
     }
 }

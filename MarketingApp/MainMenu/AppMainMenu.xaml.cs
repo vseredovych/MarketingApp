@@ -7,43 +7,60 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using DAL.Collections;
 using DAL.Entities;
-using DAL.Core;
-using DAL.Operations;
 
-namespace MarketingApp
+namespace MarketingApp.AppMainMenu
 {
     /// <summary>
     /// Логика взаимодействия для MainMenu.xaml
     /// </summary>
-    public partial class MainMenu : Window
+    public partial class AppMainMenu : Window
     {
-        User user;
 
         ProductsMenu productsMenu;
-        MerchantsMenu merchantsMenu;
         UsersMenu usersMenu;
-        RootMenu rootMenu;
-        ProfileMenu profileMenu;
 
-        public MainMenu(long id)
+        public AppMainMenu()
         {
-            GetUserInfo(id);
-            profileMenu = new ProfileMenu(user);
+            //productRepository.FillRepositoryWithData();
+            //userRepository.FillRepositoryWithData();
+            //ItemS = productRepository();
             productsMenu = new ProductsMenu();
-            merchantsMenu = new MerchantsMenu();
             usersMenu = new UsersMenu();
-            rootMenu = new RootMenu();
+
+            //for (int i = 6; i < 100; i++)
+            //{
+            //    Products.Add(new Product
+            //    {
+            //        Id = i,
+            //        Name = "Name" + i,
+            //        CreatedAt = Convert.ToDateTime("2019-10-10"),
+            //        MerchantId = i,
+            //        Status = "Present"
+            //    }
+            //);
+            //for (int i = 1; i < 100; i++)
+            //{
+            //    Users.Add(new User
+            //    {
+            //        Id = i,
+            //        Dob = Convert.ToDateTime("2019-10-10"),
+            //        FirstName = "Name" + 1,
+            //        LastName = "LastName" + 1,
+            //        CurrentSity = "Lviv",
+            //    }
+            //    );
+            //}
+
             InitializeComponent();
-            UserName.Text = user.FirstName;
+           
         }
-        private void GetUserInfo(long id)
-        {
-            UsersOperations usersOperations = new UsersOperations();
-            user = usersOperations.GetByID(id);
-        }
+
+
+
         public void DragWindow(object sender, MouseButtonEventArgs args)
         {
             DragMove();
+           
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -84,8 +101,6 @@ namespace MarketingApp
             switch (index)
             {
                 case 0:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(profileMenu);
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
@@ -93,16 +108,18 @@ namespace MarketingApp
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(merchantsMenu);
-                    break;
-                case 3:
-                    GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(productsMenu);
                     break;
-                case 4:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(rootMenu);
-                    break;
+                //case 2:
+                //    GridPrincipal.Children.Clear();
+                //    productRepository.FillRepositoryWithData();
+
+                //    GridPrincipal.Children.Add(new Products());
+                //    break;
+                //case 1:
+                //    GridPrincipal.Children.Clear();
+                //    GridPrincipal.Children.Add(new UserControlEscolha());
+                //    break;
                 default:
                     break;
             }

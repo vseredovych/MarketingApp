@@ -20,19 +20,15 @@ namespace MarketingApp
     /// <summary>
     /// Логика взаимодействия для People.xaml
     /// </summary>
-    public partial class ProductsMenu : UserControl
+    public partial class UsersMenu : UserControl
     {
-        public ProductsCollections Products;// = new ProductRepository();
+        public UsersCollections Users;// = new ProductRepository();
 
-        int Limit;
-        int Offset;
-        public ProductsMenu()
+        public UsersMenu()
         {
             InitializeComponent();
-            Limit = 10;
-            Offset = 1;
-            Products = new ProductsCollections();
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
+            Users = new UsersCollections();
+            ItemSourceMUsers.ItemsSource = Users.GetAll();
 
             //for (int i = 6; i < 100; i++)
             //{
@@ -48,21 +44,9 @@ namespace MarketingApp
             //}
         }
 
-        private void Next_Page_Click(object sender, RoutedEventArgs e)
+        private void Gimme_Click(object sender, RoutedEventArgs e)
         {
-            if (!(Offset - Limit < 0)){
-                Offset -= Limit;
-            }
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
-        }
 
-        private void Next_Page_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            if (!(Offset + Limit > Products.GetTableCount()))
-            {
-                Offset += Limit;
-            }
-            ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
         }
     }
 }

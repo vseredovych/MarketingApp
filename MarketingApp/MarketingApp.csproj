@@ -53,6 +53,7 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1344, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.1-ci1344\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -77,16 +78,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database\migration\MigrationHelper.cs" />
     <Compile Include="Database\Authentication.cs" />
-    <Compile Include="MainMenu\Staff.xaml.cs">
-      <DependentUpon>Staff.xaml</DependentUpon>
+    <Compile Include="MainMenu\ProfileMenu.xaml.cs">
+      <DependentUpon>ProfileMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\UsersMenu.xaml.cs">
+      <DependentUpon>UsersMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\RootMenu.xaml.cs">
+      <DependentUpon>RootMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu\MerchantsMenu.xaml.cs">
+      <DependentUpon>MerchantsMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="MainMenu\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainMenu\Staff.xaml">
+    <Page Include="MainMenu\ProfileMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu\UsersMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu\RootMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu\MerchantsMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -118,9 +139,9 @@
     <Compile Include="MainMenu\Products.xaml.cs">
       <DependentUpon>Products.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs">
+    <Resource Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
+    </Resource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,10 +157,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
+    <Resource Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -156,10 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Database\migration\scripts\db_v1.0.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

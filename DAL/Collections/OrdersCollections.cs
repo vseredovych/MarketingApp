@@ -4,19 +4,17 @@ using DAL.Operations;
 using DAL.Entities;
 using DAL.Interfaces;
 
-namespace Models.Collections
+namespace DAL.Collections
 {
     public class OrdersCollections : IEntityCollection<Order>
     {
         private List<Order> orders;
         private OrdersOperations orderOperations;
-        //private const int EntityTablesCount = 6;
 
         public OrdersCollections()
         {
             orderOperations = new OrdersOperations();
             orders = new List<Order>();
-            orders = orderOperations.GetAll();
         }
 
         public void Add(Order order)
@@ -39,6 +37,7 @@ namespace Models.Collections
 
         public List<Order> GetAll()
         {
+            orders = orderOperations.GetAll();
             return orders;
         }
         public Order GetByID(int id)
@@ -49,9 +48,5 @@ namespace Models.Collections
         {
             return orders.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
     }
 }

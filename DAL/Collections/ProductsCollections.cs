@@ -4,19 +4,17 @@ using DAL.Operations;
 using DAL.Entities;
 using DAL.Interfaces;
 
-namespace Models.Collections
+namespace DAL.Collections
 {
     public class ProductsCollections : IEntityCollection<Product>
     {
         private List<Product> products;
         private ProductsOperations productOperations;
-        //private const int EntityTablesCount = 6;
 
         public ProductsCollections()
         {
             productOperations = new ProductsOperations();
             products = new List<Product>();
-            products = productOperations.GetAll();
         }
 
         public void Add(Product product)
@@ -39,6 +37,13 @@ namespace Models.Collections
 
         public List<Product> GetAll()
         {
+            products = productOperations.GetAll();
+            return products;
+        }
+        public List<Product> GetInRange(int limit, int offset)
+        {
+            products.Clear();
+            products = productOperations.GetInRange(limit, offset);
             return products;
         }
         public Product GetByID(int id)
@@ -49,9 +54,9 @@ namespace Models.Collections
         {
             return products.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
+        public long GetTableCount()
+        {
+            return productOperations.GetScalarValue("SELECT COUNT(*) FROM Products;");
+        }
     }
 }

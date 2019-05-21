@@ -15,9 +15,9 @@
 
         <Rectangle Height="280" VerticalAlignment="Top">
             <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"> 
-                    <GradientStop Color="#FF00FF16"/>
-                    <GradientStop Color="#FF044F0A" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8D8C00" Offset="1"/>
+                    <GradientStop Color="#FFDAD700" Offset="0.513"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -34,7 +34,7 @@
                 <PasswordBox x:Name="password" Margin="0,10" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
-        <Button x:Name="Login" Width="150" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#FF2BBA37" Margin="0,65" Content="LOGIN" Click="Login_Click"/>
+        <Button x:Name="Login" Width="150" Foreground="DimGray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#FFDAD700" Margin="0,65" BorderThickness="0.5" Content="LOGIN" Click="Login_Click"/>
         <TextBlock Text="Forgot password? Lol No help for you" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" Foreground="Gray" Cursor="Hand"/>
         <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Home" Width="100" Height="100" VerticalAlignment="Top" Margin="30" />
     </Grid>
