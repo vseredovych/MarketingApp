@@ -37,13 +37,18 @@ namespace MarketingApp
 
         private void Next_Page_Click(object sender, RoutedEventArgs e)
         {
-            Offset -= Limit;
+            if (!(Offset - Limit < 0)){
+                Offset -= Limit;
+            }
             ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
         }
 
         private void Next_Page_Copy_Click(object sender, RoutedEventArgs e)
         {
-            Offset += Limit;
+            if (!(Offset + Limit > Products.GetTableCount()))
+            {
+                Offset += Limit;
+            }
             ItemSourceProducts.ItemsSource = Products.GetInRange(Limit, Offset);
         }
     }

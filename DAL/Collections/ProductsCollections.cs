@@ -10,7 +10,6 @@ namespace DAL.Collections
     {
         private List<Product> products;
         private ProductsOperations productOperations;
-        //private const int EntityTablesCount = 6;
 
         public ProductsCollections()
         {
@@ -38,6 +37,7 @@ namespace DAL.Collections
 
         public List<Product> GetAll()
         {
+            products = productOperations.GetAll();
             return products;
         }
         public List<Product> GetInRange(int limit, int offset)
@@ -53,6 +53,10 @@ namespace DAL.Collections
         public int GetEntitiesCount()
         {
             return products.Count;
+        }
+        public long GetTableCount()
+        {
+            return productOperations.GetScalarValue("SELECT COUNT(*) FROM Products;");
         }
     }
 }

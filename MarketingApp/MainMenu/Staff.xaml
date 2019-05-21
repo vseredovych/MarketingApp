@@ -34,7 +34,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <!--<Image Grid.Column="0"  Width="100" Height="100" HorizontalAlignment="Left" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />-->
+                        <Image Grid.Column="0"  Width="100" Height="100" HorizontalAlignment="Left" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />
                         <Button Grid.Column="1" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Id}" />
                         <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
                         <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />

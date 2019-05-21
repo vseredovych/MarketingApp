@@ -10,7 +10,6 @@ namespace DAL.Collections
     {
         private List<User> users;
         private UsersOperations userOperations;
-        //private const int EntityTablesCount = 6;
 
         public UsersCollections()
         {
