@@ -57,9 +57,10 @@
     <Compile Include="Interfaces\IEntityCollection.cs" />
     <Compile Include="Interfaces\IOperations.cs" />
     <Compile Include="Migration\MigrationHelper.cs" />
+    <Compile Include="Operations\UsersOperations.cs" />
     <Compile Include="Operations\OrdersOperations.cs" />
     <Compile Include="Operations\ProductsOperations.cs" />
-    <Compile Include="Operations\UsersOperations.cs" />
+    <Compile Include="Operations\MerchantsOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

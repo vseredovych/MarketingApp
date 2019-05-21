@@ -10,7 +10,6 @@ namespace DAL.Collections
     {
         private List<Merchant> users;
         private MerchantsOperations userOperations;
-        //private const int EntityTablesCount = 6;
 
         public MerchantsCollections()
         {
@@ -49,9 +48,5 @@ namespace DAL.Collections
         {
             return users.Count;
         }
-        //public int GetEntityTablesCount()
-        //{
-        //    return EntityTablesCount;
-        //}
     }
 }

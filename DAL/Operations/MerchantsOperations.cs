@@ -8,29 +8,30 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
-    class UsersOperations : IOperations<User>
+    class MerchantsOperations : IOperations<Merchant>
     {
-        string databaseTable = "Users";
+        string databaseTable = "Merchants";
         DbHelper dbManager = new DbHelper();
         //CRUD
-        public void Insert(User user)
+        public void Insert(Merchant user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password)" +
-                                 "values (@Id, @FirstName, @Mail, @Password);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, CurrentCity)" +
+                                 "values (@Id, @FirstName, @LastName, @Dob, @CurrentCity);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
         }
-        public void Update(User user)
+        public void Update(Merchant user)
         {
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
-                "Mail = @Mail, " +
-                "Password = @Password " +
+                "LastName = @LastName, " +
+                "Dob = @Dob, "           +
+                "CurrentCity = @CurrentCity " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
         }
-        public void Delete(User user)
+        public void Delete(Merchant user)
         {
             string commandText = "Delete from " + databaseTable + " where Id = @Id";
             var parameters = GetParametrs(user);
@@ -45,10 +46,10 @@ namespace DAL.Operations
             dbManager.CommandExecuteNonQuery(commandText, parameters);
         }
 
-        public List<User> GetAll()
+        public List<Merchant> GetAll()
         {
             string commandText = "Select * from " + databaseTable + ";";
-            List<User> users = new List<User>();
+            List<Merchant> users = new List<Merchant>();
 
             using (var connection = dbManager.CreateConnection())
             {
@@ -58,18 +59,19 @@ namespace DAL.Operations
 
                 while (reader.Read())
                 {
-                    User user = new User();
+                    Merchant user = new Merchant();
                     user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
-                    user.Mail = reader["Mail"].ToString();
-                    user.Password = Convert.ToString(reader["Password"]);
+                    user.LastName = reader["LastName"].ToString();
+                    user.Dob = Convert.ToDateTime(reader["Dob"]);
+                    user.CurrentCity = Convert.ToString(reader["CurrentCity"]);
                     users.Add(user);
                 }
                 return users;
                 //}
             }
         }
-        public User GetByID(long id)
+        public Merchant GetByID(long id)
         {
             var parameters = new List<IDbDataParameter>();
             parameters.Add(dbManager.CreateParameter("@Id", id, DbType.Int64));
@@ -78,7 +80,7 @@ namespace DAL.Operations
             var dataReader = dbManager.GetDataReader(commandText);
             try
             {
-                var user = new User();
+                var user = new Merchant();
                 while (dataReader.Read())
                 {
                     user.Id = Convert.ToInt64(dataReader["Id"]);
@@ -101,13 +103,14 @@ namespace DAL.Operations
             object scalarValue = dbManager.GetScalarValue(commandText, parameters);
             return Convert.ToInt64(scalarValue);
         }
-        public List<DbParameter> GetParametrs(User user)
+        public List<DbParameter> GetParametrs(Merchant user)
         {
             List<DbParameter> parameters = new List<DbParameter>();
             parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Mail", 50, user.Mail, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Password", user.Password, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));
+            parameters.Add(dbManager.CreateParameter("@CurrentCity", user.CurrentCity, DbType.String));
             return parameters;
         }
     }
