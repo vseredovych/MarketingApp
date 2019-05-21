@@ -46,25 +46,36 @@
     </UserControl.Resources>
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
-        <Grid Height="450" Width="800"  Background="Transparent" Margin="-100,-55,100,54.6">
+        <Grid Background="Transparent" >
 
-            <Button Height="450" Width="800"  Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite" Click="Button_Click">
-                <StackPanel HorizontalAlignment="Right" Width="593">
-                    <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock x:Name="Id" FontSize="30" Text="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+            <Button Height="450" Width="800"  Background="WhiteSmoke" BorderThickness="1" BorderBrush="AntiqueWhite" Click="Button_Click" Margin="0,0,0,-0.4">
+                <Grid>
+                    <TextBlock Text="Your profile" FontStyle="Normal"  Margin="1,-58,8.8,258" FontSize="30" Foreground="DimGray"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Width="593">
+                    <StackPanel  Orientation="Vertical">
+                        <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
 
-                    <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock x:Name="FirstName" FontSize="30" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                        <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
 
-                    <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" Foreground="DimGray" Margin="5 0 0 0" Grid.ColumnSpan="2"/>
-                    <TextBlock x:Name="Mail" FontSize="30" Text="{Binding Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0,0,5.2,0" Grid.Column="1"/>
-                    
-                    <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock x:Name="Password" FontSize="30" Text="{Binding Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
+                        <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" Foreground="DimGray" Margin="5 0 0 0" Grid.ColumnSpan="2"/>
 
-                    <TextBlock Text="AccessLvl:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
-                    <TextBlock x:Name="AccessLvl" FontSize="30" Text="{Binding AccsessLvl}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
+                        <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
+
+                        <TextBlock Text="AccessLvl:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock x:Name="Id" FontSize="30" Text="{Binding Id}" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="DimGray" Margin="100 0 0 0"/>
+
+                        <TextBlock x:Name="FirstName" Margin="100 0 0 0" FontSize="30" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="DimGray"/>
+
+                        <TextBlock x:Name="Mail" FontSize="30" Text="{Binding Mail}" HorizontalAlignment="Left"  Foreground="DimGray" Margin="100 0 0 0" Grid.Column="1"/>
+
+                        <TextBlock x:Name="Password" FontSize="30" Text="{Binding Password}" HorizontalAlignment="Left" Foreground="DimGray" Margin="100 0 0 0"/>
+
+                        <TextBlock x:Name="AccessLvl" FontSize="30" Text="{Binding AccsessLvl}" HorizontalAlignment="Left" Foreground="DimGray" Margin="100 0 0 0"/>
+                    </StackPanel>
                 </StackPanel>
+                </Grid>
             </Button>
         </Grid>
     </materialDesign:TransitioningContent>

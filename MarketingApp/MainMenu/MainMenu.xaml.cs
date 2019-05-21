@@ -25,7 +25,6 @@ namespace MarketingApp
         RootMenu rootMenu;
         ProfileMenu profileMenu;
 
-
         public MainMenu(long id)
         {
             GetUserInfo(id);
@@ -37,8 +36,6 @@ namespace MarketingApp
             InitializeComponent();
             UserName.Text = user.FirstName;
         }
-
-
         private void GetUserInfo(long id)
         {
             UsersOperations usersOperations = new UsersOperations();
@@ -47,7 +44,6 @@ namespace MarketingApp
         public void DragWindow(object sender, MouseButtonEventArgs args)
         {
             DragMove();
-           
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

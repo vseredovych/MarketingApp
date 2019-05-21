@@ -16,6 +16,9 @@ namespace MarketingApp
             //MainMenu mainMenu = new MainMenu();
             //this.Close();
             //mainMenu.ShowDialog();
+            MainMenu mainMenu = new MainMenu(4294967301);
+            this.Close();
+            mainMenu.ShowDialog();
         }
 
 
