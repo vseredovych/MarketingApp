@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="MarketingApp.UsersMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MarketingApp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             xmlns:repo="clr-namespace:MarketingApp"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+             d:DesignHeight="450" d:DesignWidth="800"  Foreground="DimGray" Background="Transparent">
+
+    <UserControl.Resources>
+        <!--<ObjectDataProvider x:Key="productRepository"
+            ObjectType="{x:Type repo:MainMenu}" MethodName="Products.GetProducts">
+        </ObjectDataProvider>-->
+
+        <DataTemplate x:Key="productsTemplate">
+            <Grid Height="200" Width="150" Background="Transparent">
+
+                <Button Height="180" Width="130" Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite">
+                    <StackPanel>
+                        <!--<Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                        <Grid>
+                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="MerchantId:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=MerchantId}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Name:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Name}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Price:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Price}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
+                        </Grid>
+                        <Grid>
+                            <TextBlock Text="Dob:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="6" Text="{Binding Path=CreatedAt}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                        </Grid>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+        <Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="ItemSourceProducts"  ItemTemplate="{StaticResource productsTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+            <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="62,408,679,9.6" RenderTransformOrigin="-0.962,0.663" >
+                <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
+            </Button>
+            <TextBox x:Name="MoreThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
+            <TextBox x:Name="LessThen" TextWrapping="Wrap" Text="TextBox" Margin="169,408,569,8.6"/>
+
+        </Grid>
+    </materialDesign:TransitioningContent>
+</UserControl>

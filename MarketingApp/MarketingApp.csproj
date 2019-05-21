@@ -79,6 +79,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Database\Authentication.cs" />
+    <Compile Include="MainMenu\UsersMenu.xaml.cs">
+      <DependentUpon>UsersMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu\RootMenu.xaml.cs">
       <DependentUpon>RootMenu.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <DependentUpon>MerchantsMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="MainMenu\MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainMenu\UsersMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
