@@ -38,7 +38,7 @@
                         <Button Grid.Column="1" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Id}" />
                         <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
                         <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />
-                        <Button Grid.Column="4" Width="200" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Dob}"  />
+                        <Button Grid.Column="4" Width="200" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Salary}"  />
                         <Button Grid.Column="5" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=CurrentCity}"  />
 
                     </Grid>
@@ -48,7 +48,7 @@
     </UserControl.Resources>
 
     <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="0,0,18.8,-0.4">
-        <Grid Margin="0,0,0.4,-6.4">
+        <Grid Margin="0,0,0.4,-54.4">
             <Grid Margin="0,-10,-118.8,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="706" Height="40" Background="Azure">
                 <Grid Margin="0 0 0 0" Background="Azure" VerticalAlignment="Top" HorizontalAlignment="Left" Width="700">
                     <Grid.RowDefinitions>
@@ -63,11 +63,11 @@
                         <ColumnDefinition Width="100"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" Width="100" FontSize="12" Content="photo" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="0" Width="100" FontSize="12" Content="Photo" Background="#ECEB6A" Foreground="DimGray"/>
                     <Button Grid.Column="1" Width="100" FontSize="12" Content="Id" Background="#ECEB6A" Foreground="DimGray"/>
-                    <Button Grid.Column="2" Width="100" FontSize="12" Content="firstName" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="2" Width="100" FontSize="12" Content="FirstName" Background="#ECEB6A" Foreground="DimGray"/>
                     <Button Grid.Column="3" Width="100" FontSize="12" Content="LastName" Background="#ECEB6A" Foreground="DimGray"/>
-                    <Button Grid.Column="4" Width="200" FontSize="12" Content="Dob" Background="#ECEB6A" Foreground="DimGray"/>
+                    <Button Grid.Column="4" Width="200" FontSize="12" Content="Salary" Background="#ECEB6A" Foreground="DimGray"/>
                     <Button Grid.Column="5" Width="100" FontSize="12" Content="CurrentCity" Background="#ECEB6A" Foreground="DimGray"/>
                 </Grid>
             </Grid>
@@ -90,9 +90,25 @@
                     </ItemsControl>
                 </ScrollViewer>
             </Grid>
-            <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" Margin="10,418,731,0" RenderTransformOrigin="-0.962,0.663" Click="Gimme_Click" >
-                <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="25" Height="25" VerticalAlignment="Center"/>
-            </Button>
+            <Grid>
+                <Button  x:Name="Gimme" Background="#ECEB6A" Height="Auto" RenderTransformOrigin="-0.962,0.663" Click="Gimme_Click" Margin="18,449,597.4,10" >
+                    <materialDesign:PackIcon Kind="FindInPage" Foreground="DimGray" Width="47" Height="52" VerticalAlignment="Center"/>
+                </Button>
+                <Label Content="Id More Then" Margin="111,449,470.4,11"/>
+                <TextBox x:Name="MoreThen" DataContext="" TextWrapping="Wrap" Text="0" Margin="240,450,403.4,9"/>
+                <Label Content="LessThen"  Margin="310,450,303.4,9"/>
+                <TextBox x:Name="LessThen" DataContext="" TextWrapping="Wrap" Text="0" Margin="412,450,221.4,10" RenderTransformOrigin="-0.818,0.504"/>
+                <Button  x:Name="GetMoreThanAverageSalary" Background="#ECEB6A" Height="Auto" RenderTransformOrigin="-0.962,0.663" Click="GetMoreThanAverageSalary_Click" Margin="503,449,61.4,9" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="29*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <materialDesign:PackIcon Kind="FindInPage" HorizontalAlignment="Center"  Foreground="DimGray" Width="26" Height="Auto" Margin="22,10,28.8,-0.2" Grid.RowSpan="2" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="More than average" VerticalAlignment="Center" Foreground="DimGray"  Margin="-21,2,-22.2,7.8" Height="27" Grid.RowSpan="2"/>
+                    </Grid>
+                </Button>
+            </Grid>
         </Grid>
     </materialDesign:TransitioningContent>
 </UserControl>

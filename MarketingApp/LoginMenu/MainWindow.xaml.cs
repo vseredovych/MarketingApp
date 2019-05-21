@@ -17,6 +17,9 @@ namespace MarketingApp
             //mainMenu.ShowDialog();
             InitializeComponent();
             //this.Show();
+            MainMenu mainMenu = new MainMenu();
+            this.Close();
+            mainMenu.ShowDialog();
         }
 
 

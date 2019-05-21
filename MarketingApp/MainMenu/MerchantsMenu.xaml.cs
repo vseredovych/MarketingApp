@@ -45,14 +45,27 @@ namespace MarketingApp
             //}
         }
 
-        private void Delete_User_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Gimme_Click(object sender, RoutedEventArgs e)
         {
+            try {
+                ItemSourceMerchants.ItemsSource = Merchants.GetInRange(Convert.ToInt32(MoreThen.Text), Convert.ToInt32(LessThen.Text));
+            }
+            catch
+            {
+                MessageBox.Show("Invalid data!");
+            }
+        }
 
+        private void GetMoreThanAverageSalary_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ItemSourceMerchants.ItemsSource = Merchants.GetMoreThanAverage();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid data!");
+            }
         }
     }
 }

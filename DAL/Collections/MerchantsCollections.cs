@@ -8,45 +8,57 @@ namespace DAL.Collections
 {
     public class MerchantsCollections : IEntityCollection<Merchant>
     {
-        private List<Merchant> users;
-        private MerchantsOperations userOperations;
+        private List<Merchant> merchants;
+        private MerchantsOperations merchantOperations;
 
         public MerchantsCollections()
         {
-            userOperations = new MerchantsOperations();
-            users = new List<Merchant>();
-            users = userOperations.GetAll();
+            merchantOperations = new MerchantsOperations();
+            merchants = new List<Merchant>();
+            merchants = merchantOperations.GetAll();
         }
 
-        public void Add(Merchant user)
+        public void Add(Merchant merchant)
         {
-            userOperations.Insert(user);
-            users.Clear();
-            users = userOperations.GetAll();
+            merchantOperations.Insert(merchant);
+            merchants.Clear();
+            merchants = merchantOperations.GetAll();
         }
-        public void Update(Merchant user)
+        public void Update(Merchant merchant)
         {
-            userOperations.Update(user);
-            users.Clear();
-            users = userOperations.GetAll();
+            merchantOperations.Update(merchant);
+            merchants.Clear();
+            merchants = merchantOperations.GetAll();
         }
         public void Delete(int id)
         {
-            userOperations.Delete((int)users[id].Id);
-            users.RemoveAt(id);
+            merchantOperations.Delete((int)merchants[id].Id);
+            merchants.RemoveAt(id);
         }
 
         public List<Merchant> GetAll()
         {
-            return users;
+            return merchants;
+        }
+        public List<Merchant> GetInRange(long start, long end)
+        {
+            merchants.Clear();
+            merchants = merchantOperations.GetInRange(start, end);
+            return merchants;
+        }
+        public List<Merchant> GetMoreThanAverage()
+        {
+            merchants.Clear();
+            merchants = merchantOperations.GetMoreThenAverage();
+            return merchants;
         }
         public Merchant GetByID(int id)
         {
-            return users[id];
+            return merchants[id];
         }
         public int GetEntitiesCount()
         {
-            return users.Count;
+            return merchants.Count;
         }
     }
 }

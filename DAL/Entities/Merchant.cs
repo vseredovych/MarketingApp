@@ -7,7 +7,7 @@ namespace DAL.Entities
         public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime Dob { get; set; }
+        public long Salary { get; set; }
         public string CurrentCity { get; set; }
     }
 }

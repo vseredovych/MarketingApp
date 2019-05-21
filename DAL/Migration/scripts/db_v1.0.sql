@@ -59,7 +59,7 @@ CREATE TABLE `Merchants` (
  `Id` bigint NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
-  `Dob` date DEFAULT NULL,
+  `Salary` bigint NOT NULL,
   `CurrentCity` varchar(30),
 	PRIMARY KEY (`Id`)
 );

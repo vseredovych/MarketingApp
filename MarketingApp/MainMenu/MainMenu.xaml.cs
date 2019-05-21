@@ -79,15 +79,15 @@ namespace MarketingApp
                     break;
                 case 1:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(merchantsMenu);
+                    GridPrincipal.Children.Add(usersMenu);
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(productsMenu);
+                    GridPrincipal.Children.Add(merchantsMenu);
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(usersMenu);
+                    GridPrincipal.Children.Add(productsMenu);
                     break;
                 case 4:
                     GridPrincipal.Children.Clear();

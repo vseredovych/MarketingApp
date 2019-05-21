@@ -15,8 +15,8 @@ namespace DAL.Operations
         //CRUD
         public void Insert(Merchant user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Dob, CurrentCity)" +
-                                 "values (@Id, @FirstName, @LastName, @Dob, @CurrentCity);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, LastName, Salary, CurrentCity)" +
+                                 "values (@Id, @FirstName, @LastName, @Salary, @CurrentCity);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -25,7 +25,7 @@ namespace DAL.Operations
         {
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
                 "LastName = @LastName, " +
-                "Dob = @Dob, "           +
+                "Salary = @Salary, " +
                 "CurrentCity = @CurrentCity " +
                 "Where Id = @Id;";
             var parameters = GetParametrs(user);
@@ -63,7 +63,69 @@ namespace DAL.Operations
                     user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
                     user.LastName = reader["LastName"].ToString();
-                    user.Dob = Convert.ToDateTime(reader["Dob"]);
+                    user.Salary = Convert.ToInt64(reader["Salary"]);
+                    user.CurrentCity = Convert.ToString(reader["CurrentCity"]);
+                    users.Add(user);
+                }
+                return users;
+                //}
+            }
+        }
+        public List<Merchant> GetInRange(long start, long end)
+        {
+            string commandText = "Select * from " + databaseTable + " group by Salary having Salary > @Start and Salary < @End;";
+            List<DbParameter> parameters = new List<DbParameter>();
+            List<Merchant> users = new List<Merchant>();
+
+            parameters.Add(dbManager.CreateParameter("@Start", start, DbType.UInt32));
+            parameters.Add(dbManager.CreateParameter("@End", end, DbType.UInt32));
+
+
+            using (var connection = dbManager.CreateConnection())
+            {
+                connection.Open();
+                var command = dbManager.CreateDbCommand(connection, commandText);
+                DbDataReader reader = dbManager.GetDataReader(commandText, parameters);
+
+                while (reader.Read())
+                {
+                    Merchant user = new Merchant();
+                    user.Id = Convert.ToInt64(reader["Id"]);
+                    user.FirstName = reader["FirstName"].ToString();
+                    user.LastName = reader["LastName"].ToString();
+                    user.Salary = Convert.ToInt64(reader["Salary"]);
+                    user.CurrentCity = Convert.ToString(reader["CurrentCity"]);
+                    users.Add(user);
+                }
+                return users;
+                //}
+            }
+        }
+        public List<Merchant> GetMoreThenAverage()
+        {
+
+
+            string commandText = "Select * from " + databaseTable + " group by Salary having Salary > (SELECT AVG(Salary) FROM Merchants);";
+            List<DbParameter> parameters = new List<DbParameter>();
+            List<Merchant> users = new List<Merchant>();
+
+            //parameters.Add(dbManager.CreateParameter("@Start", start, DbType.UInt32));
+            //parameters.Add(dbManager.CreateParameter("@End", end, DbType.UInt32));
+
+
+            using (var connection = dbManager.CreateConnection())
+            {
+                connection.Open();
+                var command = dbManager.CreateDbCommand(connection, commandText);
+                DbDataReader reader = dbManager.GetDataReader(commandText, parameters);
+
+                while (reader.Read())
+                {
+                    Merchant user = new Merchant();
+                    user.Id = Convert.ToInt64(reader["Id"]);
+                    user.FirstName = reader["FirstName"].ToString();
+                    user.LastName = reader["LastName"].ToString();
+                    user.Salary = Convert.ToInt64(reader["Salary"]);
                     user.CurrentCity = Convert.ToString(reader["CurrentCity"]);
                     users.Add(user);
                 }
@@ -109,7 +171,7 @@ namespace DAL.Operations
             parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
             parameters.Add(dbManager.CreateParameter("@LastName", 50, user.LastName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Dob", user.Dob, DbType.DateTime));
+            parameters.Add(dbManager.CreateParameter("@Salary", user.Salary, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@CurrentCity", user.CurrentCity, DbType.String));
             return parameters;
         }

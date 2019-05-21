@@ -14,14 +14,25 @@ insert into Orders (UserId, Status, CreatedAt) Values(1, "not-active", "2019-10-
 insert into Orders (UserId, Status, CreatedAt) Values(1, "not-active", "2019-10-10");
 
 
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
-insert into Merchants (FirstName, LastName, Dob, CurrentCity) Values("FirstName", "LastName", "2019-10-10", "Kiev");
+
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 6666, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 7777, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 7777, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 7777, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 7777, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 7777, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
+insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
+
+
 
 insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
 insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
