@@ -9,3 +9,11 @@ CREATE INDEX MerchantsSalary ON Merchants(Salary);
 
 # SELECT * FROM Products WHERE Status = 'active' ORDER BY Price
 CREATE INDEX status_price ON Products(Status, Price);
+
+
+window_function_name(expression) 
+    OVER (
+        [partition_defintion]
+        [order_definition]
+        [frame_definition]
+    )
