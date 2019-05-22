@@ -46,7 +46,14 @@ namespace DAL.Operations
             parameters.Add(dbManager.CreateParameter("@Id", id, DbType.UInt32));
             dbManager.CommandExecuteNonQuery(commandText, parameters);
         }
-
+        public bool InsertUserWithTransaction(User user)
+        {
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Gmail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Gmail, @Password, AccessLvl);";
+            var parameters = GetParametrs(user);
+            dbManager.InsertWithTransaction(commandText, parameters);
+            return true;
+        }
         public List<User> GetAll()
         {
             string commandText = "Select * from " + databaseTable + ";";

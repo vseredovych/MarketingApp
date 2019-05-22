@@ -48,5 +48,12 @@ namespace MarketingApp
         {
             this.DragMove();
         }
+
+        private void Sign_Up_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpMenu signUpMenu = new SignUpMenu();
+            this.Close();
+            signUpMenu.ShowDialog();
+        }
     }
 }

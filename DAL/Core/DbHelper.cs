@@ -2,6 +2,7 @@
 using System.Data.Common;
 using System.Data;
 using System.Configuration;
+using System;
 
 namespace DAL.Core
 {
@@ -137,6 +138,41 @@ namespace DAL.Core
                     }
 
                     return command.ExecuteScalar();
+                }
+            }
+        }
+        public void InsertWithTransaction(string commandText, List<DbParameter> parameters = null)
+        {
+            IDbTransaction transaction = null;
+
+            using (var connection = CreateConnection())
+            {
+                connection.Open();
+                transaction = connection.BeginTransaction();
+                using (var command = CreateDbCommand(connection, commandText))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var parameter in parameters)
+                        {
+                            command.Parameters.Add(parameter);
+                        }
+                    }
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
         }
