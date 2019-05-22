@@ -33,8 +33,8 @@
                             <TextBlock FontSize="9" Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
-                            <TextBlock FontSize="9" Text="{Binding Path=Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock Text="Gmail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock FontSize="9" Text="{Binding Path=Gmail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
                         </Grid>
                         <!--<Grid>
                             <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>

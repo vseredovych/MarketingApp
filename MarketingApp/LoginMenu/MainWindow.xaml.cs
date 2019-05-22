@@ -13,12 +13,10 @@ namespace MarketingApp
         public MainWindow()
         {
             InitializeComponent();
-            //MainMenu mainMenu = new MainMenu();
+
+            //MainMenu mainMenu = new MainMenu(4294967301);
             //this.Close();
             //mainMenu.ShowDialog();
-            MainMenu mainMenu = new MainMenu(4294967301);
-            this.Close();
-            mainMenu.ShowDialog();
         }
 
 

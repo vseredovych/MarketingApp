@@ -32,8 +32,8 @@
                             <TextBlock FontSize="10" Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="Gmail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
+                            <TextBlock FontSize="10" Text="{Binding Path=Gmail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
                         </Grid>
                         <Grid>
                             <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
@@ -57,7 +57,7 @@
 
                         <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
 
-                        <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" Foreground="DimGray" Margin="5 0 0 0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="Gmail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="30" Foreground="DimGray" Margin="5 0 0 0" Grid.ColumnSpan="2"/>
 
                         <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="30" Foreground="DimGray" Margin="5 0 0 0"/>
 
@@ -68,7 +68,7 @@
 
                         <TextBlock x:Name="FirstName" Margin="100 0 0 0" FontSize="30" Text="{Binding FirstName}" VerticalAlignment="Center" HorizontalAlignment="Left"  Foreground="DimGray"/>
 
-                        <TextBlock x:Name="Mail" FontSize="30" Text="{Binding Mail}" HorizontalAlignment="Left"  Foreground="DimGray" Margin="100 0 0 0" Grid.Column="1"/>
+                        <TextBlock x:Name="Gmail" FontSize="30" Text="{Binding Gmail}" HorizontalAlignment="Left"  Foreground="DimGray" Margin="100 0 0 0" Grid.Column="1"/>
 
                         <TextBlock x:Name="Password" FontSize="30" Text="{Binding Password}" HorizontalAlignment="Left" Foreground="DimGray" Margin="100 0 0 0"/>
 

@@ -173,7 +173,7 @@
     <Resource Include="Resources\Png\roll_up.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Png\profile.png" />
+    <EmbeddedResource Include="Resources\Png\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />

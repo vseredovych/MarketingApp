@@ -54,7 +54,7 @@ namespace MarketingApp
         {
             Id.Text = Convert.ToString(user.Id);
             FirstName.Text = Convert.ToString(user.FirstName);
-            Mail.Text = Convert.ToString(user.Mail);
+            Gmail.Text = Convert.ToString(user.Gmail);
             Password.Text = Convert.ToString(user.Password);
             AccessLvl.Text = Convert.ToString(user.AccessLvl);
 

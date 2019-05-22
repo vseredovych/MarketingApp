@@ -64,8 +64,9 @@
     <Resource Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Migration\scripts\db_v3.0.sql" />
     <Content Include="Migration\scripts\db_v2.0.sql" />
+    <Content Include="Migration\scripts\db_v4.0.sql" />
+    <Content Include="Migration\scripts\db_v3.0.sql" />
     <Content Include="Migration\scripts\db_v1.0.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
