@@ -67,5 +67,16 @@ namespace MarketingApp
                 MessageBox.Show("Invalid data!");
             }
         }
+        private void GetAll_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ItemSourceMerchants.ItemsSource = Merchants.GetAll();
+            }
+            catch
+            {
+                MessageBox.Show("Invalid data!");
+            }
+        }
     }
 }

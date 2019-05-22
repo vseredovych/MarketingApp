@@ -38,6 +38,8 @@ namespace DAL.Collections
 
         public List<Merchant> GetAll()
         {
+            merchants.Clear();
+            merchants = merchantOperations.GetAll();
             return merchants;
         }
         public List<Merchant> GetInRange(long start, long end)

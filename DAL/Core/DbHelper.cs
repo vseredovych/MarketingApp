@@ -3,6 +3,8 @@ using System.Data.Common;
 using System.Data;
 using System.Configuration;
 using System;
+using System.Windows.Input;
+using System.Windows.Forms;
 
 namespace DAL.Core
 {
@@ -167,7 +169,6 @@ namespace DAL.Core
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw ex;
                     }
                     finally
                     {

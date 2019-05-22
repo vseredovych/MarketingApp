@@ -27,7 +27,6 @@ namespace MarketingApp
                 User.FirstName = firstname.Text;
                 User.Password = password.Password;
                 User.Gmail = email.Text;
-                User.Id = 1;
                 User.AccessLvl = 0;
                 if (CreateNewUserInDatabase())
                 {
@@ -101,7 +100,7 @@ namespace MarketingApp
                     id = Authentication.userAuthentication(email.Text, password.Password);
                     if (id > 0)
                     {
-                        MainMenu mainMenu = new MainMenu(4294967301);
+                        MainMenu mainMenu = new MainMenu(id);
                         this.Close();
                         mainMenu.Show();
                     }

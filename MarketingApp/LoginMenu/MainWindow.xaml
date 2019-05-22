@@ -35,7 +35,7 @@
             </StackPanel>
         </Grid>
         <Button x:Name="Sign_Up" Width="90" Foreground="DimGray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#FFDAD700" Margin="70,0,190.4,63" BorderThickness="0.5" Content="SIGN UP" Click="Sign_Up_Click"/>
-        <Button x:Name="LOGIN" Width="90" Foreground="DimGray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#FFDAD700" Margin="190,0,70.4,63" BorderThickness="0.5" Content="LOGIN" Click="Login_Click"/>
+        <Button x:Name="LOGIN" Width="90" Foreground="DimGray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#FFDAD700" Margin="190,0,70.4,63" BorderThickness="0.5" Content="SIGN IN" Click="Login_Click"/>
         <TextBlock Text="Forgot password? Lol No help for you" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="30" Foreground="Gray" Cursor="Hand"/>
         <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Home" Width="100" Height="100" VerticalAlignment="Top" Margin="30" />
     </Grid>
