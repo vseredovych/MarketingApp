@@ -16,8 +16,8 @@ namespace DAL.Operations
         //CRUD
         public void Insert(User user)
         {
-            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Mail, Password, AccessLvl)" +
-                                 "values (@Id, @FirstName, @Mail, @Password, AccessLvl);";
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Gmail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Gmail, @Password, AccessLvl);";
             var parameters = GetParametrs(user);
             dbManager.CommandExecuteNonQuery(commandText, parameters);
          
@@ -25,7 +25,7 @@ namespace DAL.Operations
         public void Update(User user)
         {
             string commandText = "Update " + databaseTable + " Set FirstName = @FirstName, " +
-                "Mail = @Mail, " +
+                "Gmail = @Gmail, " +
                 "Password = @Password " +
                 "AccessLvl = @AccessLvl " +
                 "Where Id = @Id;";
@@ -46,7 +46,14 @@ namespace DAL.Operations
             parameters.Add(dbManager.CreateParameter("@Id", id, DbType.UInt32));
             dbManager.CommandExecuteNonQuery(commandText, parameters);
         }
-
+        public bool InsertUserWithTransaction(User user)
+        {
+            string commandText = "Insert into " + databaseTable + " (Id, FirstName, Gmail, Password, AccessLvl)" +
+                                 "values (@Id, @FirstName, @Gmail, @Password, AccessLvl);";
+            var parameters = GetParametrs(user);
+            dbManager.InsertWithTransaction(commandText, parameters);
+            return true;
+        }
         public List<User> GetAll()
         {
             string commandText = "Select * from " + databaseTable + ";";
@@ -63,7 +70,7 @@ namespace DAL.Operations
                     User user = new User();
                     user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
-                    user.Mail = reader["Mail"].ToString();
+                    user.Gmail = reader["Gmail"].ToString();
                     user.Password = Convert.ToString(reader["Password"]);
                     user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                     users.Add(user);
@@ -86,7 +93,7 @@ namespace DAL.Operations
                 {
                     user.Id = Convert.ToInt64(reader["Id"]);
                     user.FirstName = reader["FirstName"].ToString();
-                    user.Mail = reader["Mail"].ToString();
+                    user.Gmail = reader["Gmail"].ToString();
                     user.Password = Convert.ToString(reader["Password"]);
                     user.AccessLvl = Convert.ToInt32(reader["AccessLvl"]);
                 }
@@ -112,7 +119,7 @@ namespace DAL.Operations
             List<DbParameter> parameters = new List<DbParameter>();
             parameters.Add(dbManager.CreateParameter("@Id", user.Id, DbType.Int64));
             parameters.Add(dbManager.CreateParameter("@FirstName", 50, user.FirstName, DbType.String));
-            parameters.Add(dbManager.CreateParameter("@Mail", 50, user.Mail, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Gmail", 50, user.Gmail, DbType.String));
             parameters.Add(dbManager.CreateParameter("@Password", user.Password, DbType.String));
             parameters.Add(dbManager.CreateParameter("@AccessLvl", user.Id, DbType.Int32));
 

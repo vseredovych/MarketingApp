@@ -41,7 +41,7 @@
                     <StackPanel Width="150">
                         <Button Content="Account"/>
                         <Button Content="Settings"/>
-                        <Button Content="Help"/>
+                        <Button x:Name="Help" Click="Help_Click"/>
                         <Separator/>
                         <Button x:Name="ButtonPupUpLogOut" Content="Logout" Click="ButtonPupUpLogOut_Click"/>
                     </StackPanel>

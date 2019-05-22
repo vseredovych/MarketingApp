@@ -113,5 +113,10 @@ namespace MarketingApp
             TrainsitionigContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (150 + (60 * index)), 0, 0);
         }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

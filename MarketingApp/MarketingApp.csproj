@@ -79,6 +79,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Database\Authentication.cs" />
+    <Compile Include="LoginMenu\SignUpMenu.xaml.cs">
+      <DependentUpon>SignUpMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu\ProfileMenu.xaml.cs">
       <DependentUpon>ProfileMenu.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Compile Include="MainMenu\MerchantsMenu.xaml.cs">
       <DependentUpon>MerchantsMenu.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoginMenu\SignUpMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainMenu\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -173,7 +180,7 @@
     <Resource Include="Resources\Png\roll_up.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Png\profile.png" />
+    <EmbeddedResource Include="Resources\Png\profile.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Png\images.png" />

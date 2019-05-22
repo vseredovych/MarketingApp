@@ -1,3 +1,4 @@
+# Create db update
 DROP DATABASE IF EXISTS MarketingApp;
 CREATE DATABASE  MarketingApp;
 USE MarketingApp;
@@ -5,11 +6,12 @@ USE MarketingApp;
 CREATE TABLE `Users` (
   `Id` bigint NOT NULL AUTO_INCREMENT, 
   `FirstName` varchar(30) NOT NULL,
-  `Mail` varchar(30) NOT NULL,
+  `Gmail`  varchar(30) NOT NULL,
   `Password` varchar(30),
   `AccessLvl` int NOT NULL,
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `uk_Merchants_Id` (`Id`)
+  UNIQUE KEY `uk_Users_Id` (`Id`),
+  UNIQUE KEY `uk_Gmail_Id` (`Gmail`)
 );
 
 ALTER TABLE Users AUTO_INCREMENT=4294967296;

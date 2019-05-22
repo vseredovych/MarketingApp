@@ -13,12 +13,10 @@ namespace MarketingApp
         public MainWindow()
         {
             InitializeComponent();
-            //MainMenu mainMenu = new MainMenu();
+
+            //MainMenu mainMenu = new MainMenu(4294967301);
             //this.Close();
             //mainMenu.ShowDialog();
-            MainMenu mainMenu = new MainMenu(4294967301);
-            this.Close();
-            mainMenu.ShowDialog();
         }
 
 
@@ -49,6 +47,13 @@ namespace MarketingApp
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void Sign_Up_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpMenu signUpMenu = new SignUpMenu();
+            this.Close();
+            signUpMenu.ShowDialog();
         }
     }
 }

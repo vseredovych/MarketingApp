@@ -22,12 +22,12 @@ namespace MarketingApp
 
             migrationHelper.Update();
 
-            string querryForPassword = "SELECT Password FROM Users WHERE Mail=@Mail";
-            string querryForId = "SELECT Id FROM Users WHERE Mail=@Mail";
+            string querryForPassword = "SELECT Password FROM Users WHERE Gmail=@Gmail";
+            string querryForId = "SELECT Id FROM Users WHERE Gmail=@Gmail";
 
             List<DbParameter> parameters = new List<DbParameter>();
 
-            parameters.Add(dbManager.CreateParameter("@Mail", mail, DbType.String));
+            parameters.Add(dbManager.CreateParameter("@Gmail", mail, DbType.String));
 
 
             if ((string)dbManager.GetScalarValue(querryForPassword, parameters) == password)

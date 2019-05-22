@@ -13,7 +13,7 @@ namespace MarketingApp.Database.Migration
     public class MigrationHelper
     {
         string tableName = "DbVersions";
-        const int LAST_VERSION = 3;
+        const int LAST_VERSION = 4;
 
         public bool Update()
         {

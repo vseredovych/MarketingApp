@@ -34,7 +34,8 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <Image Grid.Column="0"  Width="30" Height="30" HorizontalAlignment="Center" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />
+                        <!--<Image Grid.Column="0"  Width="30" Height="30" HorizontalAlignment="Center" Grid.Row="1" Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\profile.png" />-->
+                        <materialDesign:PackIcon Foreground="DimGray" Kind="User" Grid.Column="0"  Width="30" Height="30" HorizontalAlignment="Center" Grid.Row="1"/>
                         <Button Grid.Column="1" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=Id}" />
                         <Button Grid.Column="2" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=FirstName}"  />
                         <Button Grid.Column="3" Width="100" Foreground="DimGray" HorizontalAlignment="Left" Grid.Row="1" Background="#ECEB6A" FontSize="10" Content="{Binding Path=LastName}"  />
@@ -104,8 +105,18 @@
                             <RowDefinition Height="29*"/>
                             <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
-                        <materialDesign:PackIcon Kind="FindInPage" HorizontalAlignment="Center"  Foreground="DimGray" Width="26" Height="Auto" Margin="22,10,28.8,-0.2" Grid.RowSpan="2" VerticalAlignment="Stretch"/>
+                        <materialDesign:PackIcon FontSize="10" Kind="FindInPage" HorizontalAlignment="Center"  Foreground="DimGray" Width="26" Height="Auto" Margin="22,10,28.8,-0.2" Grid.RowSpan="2" VerticalAlignment="Stretch"/>
                         <TextBlock Text="More than average" VerticalAlignment="Center" Foreground="DimGray"  Margin="-21,2,-22.2,7.8" Height="27" Grid.RowSpan="2"/>
+                    </Grid>
+                </Button>
+                <Button  x:Name="GetAll" FontSize="10" Background="#ECEB6A" Height="Auto" RenderTransformOrigin="-0.962,0.663" Click="GetAll_Click_1" Margin="645,451,-80.6,7" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="29*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <materialDesign:PackIcon Kind="FindInPage" HorizontalAlignment="Center"  Foreground="DimGray" Width="26" Height="Auto" Margin="22,10,28.8,-0.2" Grid.RowSpan="2" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="Get all" VerticalAlignment="Center" Foreground="DimGray"  Margin="-21,2,-22.2,7.8" Height="27" Grid.RowSpan="2"/>
                     </Grid>
                 </Button>
             </Grid>
