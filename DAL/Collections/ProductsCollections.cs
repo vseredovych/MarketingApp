@@ -37,6 +37,7 @@ namespace DAL.Collections
 
         public List<Product> GetAll()
         {
+            products = productOperations.GetAll();
             return products;
         }
         public List<Product> GetInRange(int limit, int offset)
@@ -52,6 +53,10 @@ namespace DAL.Collections
         public int GetEntitiesCount()
         {
             return products.Count;
+        }
+        public long GetTableCount()
+        {
+            return productOperations.GetScalarValue("SELECT COUNT(*) FROM Products;");
         }
     }
 }

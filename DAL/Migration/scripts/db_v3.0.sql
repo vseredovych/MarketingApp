@@ -33,7 +33,7 @@ insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstNa
 insert into Merchants (FirstName, LastName, Salary, CurrentCity) Values("FirstName", "LastName", 8888, "Kiev");
 
 
-
+insert into Users (FirstName, Mail, Password, AccessLvl) Values("Viktor", "viktor@g.g", "123456", 10);
 insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
 insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);
 insert into Users (FirstName, Mail, Password, AccessLvl) Values("FirstName", "Mail", "Password", 10);

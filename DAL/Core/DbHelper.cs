@@ -146,7 +146,7 @@ namespace DAL.Core
             //try
             //{
             var connection = this.CreateConnection();
-                    connection.Open();
+            connection.Open();
 
             var command = this.CreateDbCommand(connection, commandText);
 

@@ -12,12 +12,11 @@ namespace MarketingApp
     {
         public MainWindow()
         {
+            InitializeComponent();
             //MainMenu mainMenu = new MainMenu();
             //this.Close();
             //mainMenu.ShowDialog();
-            InitializeComponent();
-            //this.Show();
-            MainMenu mainMenu = new MainMenu();
+            MainMenu mainMenu = new MainMenu(4294967301);
             this.Close();
             mainMenu.ShowDialog();
         }
@@ -26,17 +25,25 @@ namespace MarketingApp
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            if (Authentication.userAuthentication(email.Text, password.Password))
+            long id = -1;
+            if (password.Password == "" || email.Text == "")
             {
-                MainMenu mainMenu = new MainMenu();
-                this.Close();
-                mainMenu.ShowDialog();
+                MessageBox.Show("No email or password entered!");
             }
             else
             {
-                MessageBox.Show("Invalid login or password!");
+                id = Authentication.userAuthentication(email.Text, password.Password);
+                if (id > 0)
+                {
+                    MainMenu mainMenu = new MainMenu(id);
+                    this.Close();
+                    mainMenu.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid login or password!");
+                }
             }
-
 
         }
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

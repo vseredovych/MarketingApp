@@ -23,22 +23,23 @@
                 <Button Height="180" Width="130" Background="#ECEB6A" BorderThickness="1" BorderBrush="AntiqueWhite">
                     <StackPanel>
                         <!--<Image Source="C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\MarketingApp\Resources\Png\images.png" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                        <materialDesign:PackIcon Kind="FaceProfile" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="DimGray"  />
                         <Grid>
-                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="Id:" VerticalAlignment="Center"  FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock FontSize="9" Text="{Binding Path=Id}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="FirstName:" VerticalAlignment="Center"  FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock FontSize="9" Text="{Binding Path=FirstName}" VerticalAlignment="Center" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
                         </Grid>
                         <Grid>
-                            <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 5 0"/>
+                            <TextBlock Text="Mail:" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock FontSize="9" Text="{Binding Path=Mail}" HorizontalAlignment="Right"  Foreground="DimGray" Margin="0 0 0 0"/>
                         </Grid>
-                        <Grid>
-                            <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="10" Foreground="DimGray" Margin="5 0 0 0"/>
-                            <TextBlock FontSize="10" Text="{Binding Path=Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 5 0"/>
-                        </Grid>
+                        <!--<Grid>
+                            <TextBlock Text="Password:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="9" Foreground="DimGray" Margin="0 0 0 0"/>
+                            <TextBlock FontSize="9" Text="{Binding Path=Password}" HorizontalAlignment="Right" Foreground="DimGray" Margin="0 0 0 0"/>
+                        </Grid>-->
                     </StackPanel>
                 </Button>
             </Grid>

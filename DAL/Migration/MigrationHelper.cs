@@ -84,7 +84,8 @@ namespace MarketingApp.Database.Migration
         {
             DbHelper dbHelper = new DbHelper();
             string lastVersionCommand = "SELECT MAX(Id) FROM " + tableName + ";";
-            //string script = File.ReadAllText(@"C:\Merchants\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + LAST_VERSION + ".0.sql");
+            //string script = File.ReadAllText(@"C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\DAL\Migration\scripts\" + "db_v" + LAST_VERSION + ".0.sql");
+
 
             int lastVersion;
             using (DbConnection connection = dbHelper.CreateConnection())
@@ -100,7 +101,7 @@ namespace MarketingApp.Database.Migration
                 {
                     for (int i = lastVersion + 1; i <= LAST_VERSION; i++)
                     {
-                        string script = File.ReadAllText(@"C:\Users\vsere\Desktop\files\Code\Programms\Marketing\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
+                        string script = File.ReadAllText(@"C:\Vitya\Programs\2 курс\C# (2 сем)\database\MarketingApp\DAL\Migration\scripts\" + "db_v" + i + ".0.sql");
                         dbHelper.CommandExecuteNonQuery(script);
                     }
                 }

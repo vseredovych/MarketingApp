@@ -8,7 +8,7 @@ using DAL.Interfaces;
 
 namespace DAL.Operations
 {
-    class MerchantsOperations : IOperations<Merchant>
+    public class MerchantsOperations : IOperations<Merchant>
     {
         string databaseTable = "Merchants";
         DbHelper dbManager = new DbHelper();
